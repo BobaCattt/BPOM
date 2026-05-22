@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BPOM</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #ff3c3c, #ff8a3d);
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.hero h2 {
+  font-size: 50px;
+}
+
+.cta-btn {
+  margin-top: 20px;
+  padding: 15px 40px;
+  border-radius: 12px;
+  border: none;
+  background: white;
+  color: #ff3c3c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* HIDDEN SECTIONS */
+.hidden {
+  display: none;
+}
+
+/* TEST AREA */
+.test {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* REACTION BOX */
+#box {
+  width: 200px;
+  height: 200px;
+  background: red;
+  margin: 20px auto;
+  border-radius: 12px;
+}
+
+/* FEATURES */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 80px;
+}
+
+/* DASHBOARD */
+.dashboard {
+  text-align: center;
+}
+
+.score-card {
+  background: rgba(255,255,255,0.2);
+  padding: 20px;
+  margin: 10px auto;
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* FADE */
+.fade {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <h1>BPOM</h1>
+  <div class="nav-links">
+    <a href="#" onclick="showHome()">Home</a>
+    <a href="#" onclick="showDashboard()">Dashboard</a>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="hero fade">
+  <h2>Check Your Brain + Body</h2>
+  <p>2 Minutes. Better Insights.</p>
+  <button class="cta-btn" onclick="startTest()">Start Test</button>
+
+  <div class="features">
+    <div>🧠 Cognitive Tests</div>
+    <div>❤️ Health Insights</div>
+    <div>📈 Track Progress</div>
+  </div>
+</div>
+
+<!-- REACTION TEST -->
+<div id="reaction" class="test hidden fade">
+  <h2>Reaction Test</h2>
+  <p>Click when green</p>
+  <div id="box"></div>
+</div>
+
+<!-- MEMORY TEST -->
+<div id="memory" class="test hidden fade">
+  <h2>Memory Test</h2>
+  <p id="sequence"></p>
+  <input id="memoryInput" placeholder="Enter numbers">
+  <button onclick="checkMemory()">Submit</button>
+</div>
+
+<!-- FOCUS TEST -->
+<div id="focus" class="test hidden fade">
+  <h2>Focus Test</h2>
+  <p>Click ONLY when you see ★</p>
+  <h1 id="focusSymbol">+</h1>
+</div>
+
+<!-- RESULTS -->
+<div id="results" class="test hidden fade">
+  <h2>Results</h2>
+  <p id="reactionResult"></p>
+  <p id="memoryResult"></p>
+  <p id="focusResult"></p>
+  <h3 id="finalScore"></h3>
+  <button onclick="showHome()">Back Home</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="dashboard hidden fade">
+  <h2>Your Past Scores</h2>
+  <div id="history"></div>
+  <button onclick="showHome()">Back</button>
+</div>
+
+<script>
+let startTime, reactionTime;
+let sequence = [];
+let memoryCorrect = false;
+let focusScore = 0;
+
+/* NAVIGATION */
+function showHome() {
+  hideAll();
+  document.getElementById("home").classList.remove("hidden");
+}
+
+function showDashboard() {
+  hideAll();
+  document.getElementById("dashboard").classList.remove("hidden");
+  loadHistory();
+}
+
+function hideAll() {
+  document.querySelectorAll("body > div").forEach(d => d.classList.add("hidden"));
+}
+
+/* START */
+function startTest() {
+  hideAll();
+  startReaction();
+}
+
+/* REACTION */
+function startReaction() {
+  let screen = document.getElementById("reaction");
+  screen.classList.remove("hidden");
+
+  let box = document.getElementById("box");
+  box.style.background = "red";
+
+  setTimeout(() => {
+    box.style.background = "green";
+    startTime = Date.now();
+  }, Math.random() * 2000 + 1000);
+
+  box.onclick = () => {
+    if (box.style.background === "green") {
+      reactionTime = Date.now() - startTime;
+      screen.classList.add("hidden");
+      startMemory();
+    }
+  };
+}
+
+/* MEMORY */
+function startMemory() {
+  let screen = document.getElementById("memory");
+  screen.classList.remove("hidden");
+
+  sequence = Array.from({length: 4}, () => Math.floor(Math.random() * 9));
+  document.getElementById("sequence").innerText = sequence.join(" ");
+
+  setTimeout(() => {
+    document.getElementById("sequence").innerText = "";
+  }, 2000);
+}
+
+function checkMemory() {
+  let input = document.getElementById("memoryInput").value.split("").map(Number);
+  memoryCorrect = JSON.stringify(input) === JSON.stringify(sequence);
+
+  document.getElementById("memory").classList.add("hidden");
+  startFocus();
+}
+
+/* FOCUS */
+function startFocus() {
+  let screen = document.getElementById("focus");
+  screen.classList.remove("hidden");
+
+  let symbol = document.getElementById("focusSymbol");
+  let symbols = ["+", "*", "#", "★"];
+
+  let rounds = 0;
+  focusScore = 0;
+
+  let interval = setInterval(() => {
+    let current = symbols[Math.floor(Math.random()*symbols.length)];
+    symbol.innerText = current;
+
+    symbol.onclick = () => {
+      if (current === "★") focusScore++;
+      else focusScore--;
+    };
+
+    rounds++;
+    if (rounds > 10) {
+      clearInterval(interval);
+      screen.classList.add("hidden");
+      showResults();
+    }
+  }, 700);
+}
+
+/* RESULTS */
+function showResults() {
+  let screen = document.getElementById("results");
+  screen.classList.remove("hidden");
+
+  document.getElementById("reactionResult").innerText = "Reaction: " + reactionTime + " ms";
+  document.getElementById("memoryResult").innerText = "Memory: " + (memoryCorrect ? "Correct" : "Incorrect");
+  document.getElementById("focusResult").innerText = "Focus Score: " + focusScore;
+
+  let score = Math.max(0, 100 - reactionTime/5) + (memoryCorrect ? 50 : 0) + (focusScore * 5);
+
+  document.getElementById("finalScore").innerText = "Neuro Score: " + Math.round(score);
+
+  saveScore(Math.round(score));
+}
+
+/* STORAGE */
+function saveScore(score) {
+  let history = JSON.parse(localStorage.getItem("scores") || "[]");
+  history.push({score: score, date: new Date().toLocaleString()});
+  localStorage.setItem("scores", JSON.stringify(history));
+}
+
+function loadHistory() {
+  let historyDiv = document.getElementById("history");
+  historyDiv.innerHTML = "";
+
+  let history = JSON.parse(localStorage.getItem("scores") || "[]");
+
+  history.reverse().forEach(entry => {
+    let div = document.createElement("div");
+    div.className = "score-card";
+    div.innerText = entry.score + " (" + entry.date + ")";
+    historyDiv.appendChild(div);
+  });
+}
+</script>
+
+</body>
+</html>
