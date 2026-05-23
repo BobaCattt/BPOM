@@ -758,12 +758,10 @@ function submitAssessment(){
   /* ── POST to Google Sheets via no-cors fetch ── */
   fetch(SHEET_URL, {
     method: 'POST',
-    mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
   })
   .then(function(){
-    /* no-cors means we can't read the response body, but if we got here it went through */
     setStatus('ok', 'Responses recorded. Thank you!', false);
   })
   .catch(function(err){
