@@ -13,16 +13,11 @@
   --text:#fff;--text-muted:rgba(255,255,255,0.7);--text-dim:rgba(255,255,255,0.42);
   --border:rgba(255,255,255,0.2);--border-strong:rgba(255,255,255,0.5);
   --radius:14px;--radius-sm:8px;--radius-lg:20px;
-  --success:rgba(46,204,113,0.8);--danger:rgba(192,57,43,0.8);--warn:rgba(230,126,34,0.8);
 }
 html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;background:var(--bg-grad);color:var(--text);scroll-behavior:smooth}
-
-/* ── SCREENS ── */
 .screen{display:none;min-height:100vh;flex-direction:column;animation:fadeUp 0.4s ease}
 .screen.active{display:flex}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-
-/* ── NAV ── */
 .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:0.5px solid var(--border);flex-shrink:0}
 .nav-brand{font-family:'DM Serif Display',serif;font-size:20px;letter-spacing:.5px;cursor:pointer}
 .nav-brand small{font-size:11px;display:block;font-family:'DM Sans',sans-serif;font-weight:300;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:1px}
@@ -32,8 +27,6 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .nav-user{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-muted)}
 .nav-user .avatar{width:30px;height:30px;border-radius:50%;background:var(--card-solid);border:0.5px solid var(--border-strong);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:#fff;flex-shrink:0}
 .nav-visit{font-size:11px;color:var(--text-dim);border:0.5px solid var(--border);border-radius:50px;padding:4px 12px}
-
-/* ── HERO ── */
 .hero-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 40px 80px;text-align:center}
 .hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:22px}
 .hero-title{font-family:'DM Serif Display',serif;font-size:20px;line-height:1.45;max-width:640px;margin-bottom:10px;color:var(--text-muted);font-weight:400}
@@ -45,8 +38,6 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .hero-stat{text-align:center}
 .hero-stat .hs-n{font-family:'DM Serif Display',serif;font-size:32px}
 .hero-stat .hs-l{font-size:11px;font-weight:300;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-top:2px}
-
-/* ── AUTH ── */
 .auth-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 40px}
 .auth-card{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:40px;width:100%;max-width:400px}
 .auth-title{font-family:'DM Serif Display',serif;font-size:28px;margin-bottom:6px}
@@ -63,8 +54,6 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .btn-full{width:100%;border-radius:var(--radius-sm)}
 .auth-switch{font-size:13px;color:var(--text-muted);text-align:center;margin-top:16px}
 .auth-switch a{color:#fff;cursor:pointer;text-decoration:underline}
-
-/* ── SECTIONS ── */
 .section-wrap{flex:1;padding:48px;max-width:680px;margin:0 auto;width:100%}
 .step-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .step-label{font-size:11px;color:var(--text-dim);letter-spacing:1.5px;text-transform:uppercase}
@@ -73,8 +62,6 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .section-eyebrow{font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
 .section-title{font-family:'DM Serif Display',serif;font-size:32px;line-height:1.2;margin-bottom:8px}
 .section-desc{font-size:14px;font-weight:300;color:var(--text-muted);line-height:1.65;margin-bottom:30px}
-
-/* ── REACTION ── */
 .trial-dots{display:flex;gap:8px;margin-bottom:24px}
 .trial-dot{width:9px;height:9px;border-radius:50%;background:var(--card);border:0.5px solid var(--border);transition:background .3s}
 .trial-dot.done{background:#fff}
@@ -90,8 +77,6 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .trial-item{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius-sm);font-size:14px}
 .trial-ms{font-weight:500;font-size:15px}
 .trial-qual{font-size:11px;color:var(--text-dim);letter-spacing:.5px}
-
-/* ── DECISION ── */
 .decision-area{display:flex;flex-direction:column;align-items:center;gap:12px}
 .dec-counter{font-size:11px;color:var(--text-dim);letter-spacing:2px;text-transform:uppercase}
 .dec-number{font-family:'DM Serif Display',serif;font-size:88px;line-height:1;text-align:center;min-height:100px;margin:10px 0}
@@ -105,8 +90,6 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .dec-dot.correct-dot{background:rgba(39,174,96,0.7)}
 .dec-dot.wrong-dot{background:rgba(192,57,43,0.7)}
 .dec-dot.active-dot{background:rgba(255,255,255,0.45)}
-
-/* ── MEMORY ── */
 .mem-display{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;font-family:'DM Serif Display',serif;font-size:48px;letter-spacing:14px;min-height:110px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
 .mem-display.faded{color:var(--text-dim);letter-spacing:8px;font-size:36px}
 .mem-input{width:100%;background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius-sm);padding:16px 18px;color:#fff;font-size:26px;font-family:'DM Serif Display',serif;letter-spacing:10px;text-align:center;outline:none;transition:border-color .2s}
@@ -117,8 +100,6 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .btn-submit{width:100%;background:var(--card-solid);border:0.5px solid var(--border-strong);color:#fff;padding:14px;border-radius:50px;font-size:15px;font-weight:400;font-family:'DM Sans',sans-serif;cursor:pointer;margin-top:14px;transition:background .2s}
 .btn-submit:hover:not(:disabled){background:rgba(255,255,255,0.28)}
 .btn-submit:disabled{opacity:.4;cursor:not-allowed}
-
-/* ── BIOMETRICS ── */
 .bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .bio-field{display:flex;flex-direction:column;gap:5px}
 .bio-field.full{grid-column:1/-1}
@@ -128,40 +109,21 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .bio-input:focus,.bio-select:focus{border-color:var(--border-strong)}
 .bio-select option{background:#8b2020;color:#fff}
 .bio-unit{font-size:11px;color:var(--text-dim);margin-top:2px}
-
-/* ── RESULTS ── */
-.results-center{flex:1;padding:48px;max-width:680px;margin:0 auto;width:100%;text-align:center}
-.risk-dial-wrap{width:200px;height:200px;margin:0 auto 24px;position:relative}
-.risk-dial-wrap svg{width:100%;height:100%}
-.risk-number{position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);text-align:center}
-.risk-pct{font-family:'DM Serif Display',serif;font-size:48px;line-height:1}
-.risk-lbl{font-size:10px;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
-.risk-tier{display:inline-block;padding:6px 20px;border-radius:50px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
-.tier-low{background:rgba(39,174,96,0.2);border:0.5px solid rgba(39,174,96,0.5);color:#85ffba}
-.tier-mod{background:rgba(230,126,34,0.2);border:0.5px solid rgba(230,126,34,0.5);color:#ffd580}
-.tier-high{background:rgba(192,57,43,0.2);border:0.5px solid rgba(192,57,43,0.5);color:#ff9090}
-.result-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;text-align:left}
-.result-card{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius-sm);padding:14px}
-.rc-val{font-weight:500;font-size:20px;margin-bottom:2px}
-.rc-lbl{font-size:11px;color:var(--text-muted);letter-spacing:.3px}
-.breakdown{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px;text-align:left}
-.breakdown-hd{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
-.breakdown-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:0.5px solid var(--border);font-size:13px}
-.breakdown-row:last-child{border-bottom:none;padding-top:12px;font-size:15px}
-.br-lbl{color:var(--text-muted)}
-.br-val{font-weight:500}
-.btn-ghost{width:100%;background:transparent;border:0.5px solid var(--border-strong);color:#fff;padding:13px;border-radius:50px;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s;margin-top:8px}
+/* THANK YOU */
+.ty-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 40px;text-align:center}
+.ty-icon{font-size:64px;margin-bottom:28px;line-height:1}
+.ty-title{font-family:'DM Serif Display',serif;font-size:52px;line-height:1.1;margin-bottom:16px}
+.ty-sub{font-size:17px;font-weight:300;color:var(--text-muted);max-width:460px;line-height:1.7;margin-bottom:12px}
+.ty-note{font-size:13px;color:var(--text-dim);max-width:400px;line-height:1.65;margin-bottom:36px}
+.ty-status{font-size:13px;padding:10px 22px;border-radius:50px;border:0.5px solid var(--border);margin-bottom:32px;min-height:40px;display:flex;align-items:center;gap:8px}
+.ty-status.sending{color:var(--text-muted)}
+.ty-status.ok{color:#85ffba;border-color:rgba(39,174,96,0.4)}
+.ty-status.err{color:#ffaaaa;border-color:rgba(192,57,43,0.4)}
+.spinner{width:14px;height:14px;border:2px solid rgba(255,255,255,0.2);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn-ghost{background:transparent;border:0.5px solid var(--border-strong);color:#fff;padding:13px 36px;border-radius:50px;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s}
 .btn-ghost:hover{background:var(--card)}
-
-/* ── DASHBOARD ── */
-.dash-entry{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:10px}
-.dash-score{font-family:'DM Serif Display',serif;font-size:26px}
-.dash-meta{font-size:12px;color:var(--text-muted);margin-top:2px}
-.dash-details{display:flex;gap:14px;flex-wrap:wrap}
-.dash-detail{font-size:12px;color:var(--text-dim)}
-.dash-empty{font-size:15px;font-weight:300;color:var(--text-muted);padding:40px 0;text-align:center}
-
-/* ── ABOUT ── */
+/* ABOUT */
 .about-wrap{flex:1;padding:64px 48px;max-width:680px;margin:0 auto;width:100%}
 .about-intro{font-family:'DM Serif Display',serif;font-size:38px;line-height:1.25;margin-bottom:24px}
 .about-intro em{font-style:italic;opacity:.65}
@@ -170,20 +132,18 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .about-section p{font-size:15px;font-weight:300;color:var(--text-muted);line-height:1.75}
 .about-divider{border:none;border-top:0.5px solid var(--border);margin:32px 0}
 .module-card{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px}
-.module-card h4{font-size:14px;font-weight:500;margin-bottom:5px;letter-spacing:.3px}
+.module-card h4{font-size:14px;font-weight:500;margin-bottom:5px}
 .module-card p{font-size:13px;font-weight:300;color:var(--text-muted);line-height:1.6}
 .module-tag{display:inline-block;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;background:rgba(255,255,255,0.1);border-radius:50px;padding:3px 10px;margin-bottom:8px;color:var(--text-muted)}
 .about-note{font-size:12px;color:var(--text-dim);background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px;line-height:1.65;margin-top:32px}
-
-/* ── DISCLAIMER ── */
 .disclaimer{font-size:11px;color:var(--text-dim);text-align:center;padding:14px 40px 20px;line-height:1.6;border-top:0.5px solid var(--border);max-width:580px;margin:0 auto;flex-shrink:0}
 </style>
 </head>
 <body>
 
-<!-- ════════════════════════════════
-     SCREEN: HOME
-════════════════════════════════ -->
+<!-- ══════════════════════════════
+     HOME
+══════════════════════════════ -->
 <div class="screen active" id="scr-home">
   <nav class="nav">
     <div class="nav-brand" onclick="goTo('scr-home')">HROSE <small>Hypertension Risk Online Sensory Evaluator</small></div>
@@ -197,7 +157,7 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
     <p class="hero-eyebrow">Online Screening Tool</p>
     <p class="hero-title">Hypertension Risk Online Sensory Evaluator</p>
     <div class="hero-acronym">HROSE</div>
-    <p class="hero-sub">A structured neuro-cognitive and biometric assessment that estimates your cardiovascular risk profile in under five minutes.</p>
+    <p class="hero-sub">A structured neuro-cognitive and biometric assessment. Takes approximately five minutes to complete.</p>
     <button class="btn-primary" onclick="handleStartClick()">Begin Assessment</button>
     <div class="hero-stats">
       <div class="hero-stat"><div class="hs-n">5</div><div class="hs-l">Reaction trials</div></div>
@@ -206,12 +166,12 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
       <div class="hero-stat"><div class="hs-n" id="visits-hero">—</div><div class="hs-l">Site visits</div></div>
     </div>
   </div>
-  <p class="disclaimer">This tool is for educational and research purposes only. It does not constitute medical advice. Consult a licensed physician for clinical evaluation.</p>
+  <p class="disclaimer">This tool is for educational and research purposes only. It does not constitute medical advice.</p>
 </div>
 
-<!-- ════════════════════════════════
-     SCREEN: AUTH
-════════════════════════════════ -->
+<!-- ══════════════════════════════
+     AUTH
+══════════════════════════════ -->
 <div class="screen" id="scr-auth">
   <nav class="nav">
     <div class="nav-brand" onclick="goTo('scr-home')">HROSE <small>Hypertension Risk Online Sensory Evaluator</small></div>
@@ -220,12 +180,11 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
   <div class="auth-wrap">
     <div class="auth-card">
       <h2 class="auth-title">Welcome</h2>
-      <p class="auth-sub">Sign in or create an account to save your results and track your progress over time.</p>
+      <p class="auth-sub">Sign in or create an account to begin the assessment.</p>
       <div class="auth-tabs">
         <div class="auth-tab active" id="tab-login" onclick="switchTab('login')">Sign In</div>
         <div class="auth-tab" id="tab-register" onclick="switchTab('register')">Register</div>
       </div>
-      <!-- Login -->
       <div id="form-login">
         <div class="field"><label>Username</label><input id="login-user" type="text" placeholder="Your username" autocomplete="username"></div>
         <div class="field"><label>Password</label><input id="login-pass" type="password" placeholder="Your password" autocomplete="current-password"></div>
@@ -233,7 +192,6 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
         <button class="btn-primary btn-full" onclick="doLogin()">Sign In</button>
         <p class="auth-switch">No account? <a onclick="switchTab('register')">Register here</a></p>
       </div>
-      <!-- Register -->
       <div id="form-register" style="display:none">
         <div class="field"><label>Full Name</label><input id="reg-name" type="text" placeholder="e.g. Dr. Jane Smith"></div>
         <div class="field"><label>Username</label><input id="reg-user" type="text" placeholder="Choose a username" autocomplete="username"></div>
@@ -246,9 +204,9 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     SCREEN: REACTION
-════════════════════════════════ -->
+<!-- ══════════════════════════════
+     REACTION
+══════════════════════════════ -->
 <div class="screen" id="scr-reaction">
   <nav class="nav">
     <div class="nav-brand" onclick="confirmExit()">HROSE <small>Hypertension Risk Online Sensory Evaluator</small></div>
@@ -259,7 +217,7 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
     <div class="progress-track"><div class="progress-fill" style="width:25%"></div></div>
     <p class="section-eyebrow">Cognitive Module 1</p>
     <h2 class="section-title">Reaction Time</h2>
-    <p class="section-desc">Wait for the box to turn green, then click immediately. Five trials — your mean and variability are both recorded.</p>
+    <p class="section-desc">Wait for the box to turn green, then click immediately. Five trials total.</p>
     <div class="trial-dots" id="trial-dots"></div>
     <div class="react-area idle" id="react-box" onclick="handleReactClick()">
       <span class="react-msg" id="react-msg">Click to begin</span>
@@ -269,9 +227,9 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     SCREEN: DECISION
-════════════════════════════════ -->
+<!-- ══════════════════════════════
+     DECISION
+══════════════════════════════ -->
 <div class="screen" id="scr-decision">
   <nav class="nav">
     <div class="nav-brand">HROSE <small>Hypertension Risk Online Sensory Evaluator</small></div>
@@ -295,9 +253,9 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     SCREEN: MEMORY
-════════════════════════════════ -->
+<!-- ══════════════════════════════
+     MEMORY
+══════════════════════════════ -->
 <div class="screen" id="scr-memory">
   <nav class="nav">
     <div class="nav-brand">HROSE <small>Hypertension Risk Online Sensory Evaluator</small></div>
@@ -316,9 +274,9 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     SCREEN: BIOMETRICS
-════════════════════════════════ -->
+<!-- ══════════════════════════════
+     BIOMETRICS
+══════════════════════════════ -->
 <div class="screen" id="scr-bio">
   <nav class="nav">
     <div class="nav-brand">HROSE <small>Hypertension Risk Online Sensory Evaluator</small></div>
@@ -329,7 +287,7 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
     <div class="progress-track"><div class="progress-fill" style="width:95%"></div></div>
     <p class="section-eyebrow">Biometric Intake</p>
     <h2 class="section-title">Your Measurements</h2>
-    <p class="section-desc">All fields are required to generate your risk score. These values are stored locally and never transmitted.</p>
+    <p class="section-desc">Please fill in the fields below. All information is used for research purposes only.</p>
     <div class="bio-grid">
       <div class="bio-field">
         <label class="bio-label">Age</label>
@@ -361,62 +319,34 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
         </select>
       </div>
     </div>
-    <button class="btn-primary" style="margin-top:28px;width:100%;border-radius:var(--radius)" onclick="calcRisk()">Calculate Risk Score</button>
+    <button class="btn-primary" style="margin-top:28px;width:100%;border-radius:var(--radius)" onclick="submitAssessment()">Submit Assessment</button>
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     SCREEN: RESULTS
-════════════════════════════════ -->
-<div class="screen" id="scr-results">
+<!-- ══════════════════════════════
+     THANK YOU
+══════════════════════════════ -->
+<div class="screen" id="scr-thankyou">
   <nav class="nav">
-    <div class="nav-brand" onclick="goTo('scr-home')">HROSE <small>Hypertension Risk Online Sensory Evaluator</small></div>
-    <div class="nav-links" id="nav-results"></div>
+    <div class="nav-brand">HROSE <small>Hypertension Risk Online Sensory Evaluator</small></div>
   </nav>
-  <div class="results-center">
-    <p class="section-eyebrow" style="margin-bottom:6px">Assessment Complete</p>
-    <h2 class="section-title" style="margin-bottom:28px">Your Risk Profile</h2>
-    <div class="risk-dial-wrap">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="82" stroke="rgba(255,255,255,0.1)" stroke-width="16"/>
-        <circle id="risk-arc" cx="100" cy="100" r="82"
-          stroke="rgba(255,255,255,0.85)" stroke-width="16"
-          stroke-linecap="round"
-          stroke-dasharray="515.2" stroke-dashoffset="515.2"
-          transform="rotate(-90 100 100)"
-          style="transition:stroke-dashoffset 1.4s ease,stroke 0.8s ease"/>
-      </svg>
-      <div class="risk-number"><div class="risk-pct" id="risk-pct">—</div><div class="risk-lbl">/ 100 risk</div></div>
+  <div class="ty-wrap">
+    <div class="ty-icon">🌿</div>
+    <h1 class="ty-title">Thank you.</h1>
+    <p class="ty-sub">Your participation in this study is greatly appreciated.</p>
+    <p class="ty-note">Your responses have been recorded and will contribute to ongoing research into cardiovascular health. You may now close this window, or return to the home page.</p>
+    <div class="ty-status sending" id="ty-status">
+      <div class="spinner" id="ty-spinner"></div>
+      <span id="ty-status-text">Submitting your responses…</span>
     </div>
-    <div id="risk-tier-wrap" style="margin-bottom:24px"></div>
-    <div class="result-cards" id="result-cards"></div>
-    <div class="breakdown" id="breakdown"></div>
-    <button class="btn-primary" style="width:100%;border-radius:var(--radius)" onclick="startAssessment()">Retake Assessment</button>
-    <button class="btn-ghost" onclick="showDash()">View Dashboard</button>
+    <button class="btn-ghost" onclick="goTo('scr-home')">Return to home</button>
   </div>
-  <p class="disclaimer">Risk score is a prototype estimate for research purposes only. Not a clinical diagnostic tool.</p>
+  <p class="disclaimer">This tool is for educational and research purposes only. It does not constitute medical advice.</p>
 </div>
 
-<!-- ════════════════════════════════
-     SCREEN: DASHBOARD
-════════════════════════════════ -->
-<div class="screen" id="scr-dash">
-  <nav class="nav">
-    <div class="nav-brand" onclick="goTo('scr-home')">HROSE <small>Hypertension Risk Online Sensory Evaluator</small></div>
-    <div class="nav-links" id="nav-dash"></div>
-  </nav>
-  <div class="section-wrap">
-    <p class="section-eyebrow">Session History</p>
-    <h2 class="section-title">Dashboard</h2>
-    <p class="section-desc" id="dash-user-label" style="margin-bottom:24px"></p>
-    <div id="dash-list"></div>
-    <button class="btn-ghost" style="margin-top:8px" onclick="clearHistory()">Clear All History</button>
-  </div>
-</div>
-
-<!-- ════════════════════════════════
-     SCREEN: ABOUT
-════════════════════════════════ -->
+<!-- ══════════════════════════════
+     ABOUT
+══════════════════════════════ -->
 <div class="screen" id="scr-about">
   <nav class="nav">
     <div class="nav-brand" onclick="goTo('scr-home')">HROSE <small>Hypertension Risk Online Sensory Evaluator</small></div>
@@ -428,7 +358,7 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
   <div class="about-wrap">
     <h1 class="about-intro">How <em>HROSE</em> works.</h1>
     <div class="about-section">
-      <p>HROSE — the Hypertension Risk Online Sensory Evaluator — is a prototype research tool that combines neurocognitive performance testing with basic biometric data to generate an estimated cardiovascular risk score. The assessment takes approximately five minutes and requires no specialist equipment.</p>
+      <p>HROSE — the Hypertension Risk Online Sensory Evaluator — is a prototype research tool that combines neurocognitive performance testing with basic biometric data to build a dataset for cardiovascular risk analysis. The assessment takes approximately five minutes and requires no specialist equipment.</p>
     </div>
     <hr class="about-divider">
     <div class="about-section">
@@ -436,463 +366,419 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
       <div class="module-card">
         <div class="module-tag">Module 1 · Cognitive</div>
         <h4>Reaction Time</h4>
-        <p>You are shown a coloured box that switches from red to green at a random interval. Click the moment it turns green. Five trials are conducted. Your mean reaction time and the standard deviation across trials (variability) are both recorded. Elevated variability in reaction time has been associated with reduced cardiovascular and neural efficiency in research literature.</p>
+        <p>A box switches from red to green at a random interval. Click the moment it turns green. Five trials are conducted. Mean reaction time and standard deviation (variability) are both recorded. Elevated variability has been associated with reduced cardiovascular and neural efficiency in research literature.</p>
       </div>
       <div class="module-card">
         <div class="module-tag">Module 2 · Cognitive</div>
         <h4>Decision Speed</h4>
-        <p>Ten single-digit numbers are displayed in sequence. You classify each as odd or even as quickly as possible. Accuracy and per-trial response time are both captured. Decision speed reflects prefrontal processing efficiency, which can be impacted by hypertensive states and reduced cerebrovascular perfusion.</p>
+        <p>Ten numbers are displayed in sequence. Classify each as odd or even as quickly as possible. Accuracy and per-trial response time are both captured. Decision speed reflects prefrontal processing efficiency, which can be impacted by hypertensive states and reduced cerebrovascular perfusion.</p>
       </div>
       <div class="module-card">
         <div class="module-tag">Module 3 · Cognitive</div>
         <h4>Working Memory</h4>
-        <p>A sequence of digits is briefly displayed, then hidden. You must enter the sequence from memory. The sequence length increases after each correct answer (starting at four digits, up to eight). Working memory capacity is measured as a ratio of correct responses. Deficits in working memory have been linked to hypertension-related white matter changes.</p>
+        <p>A sequence of digits is briefly displayed, then hidden. You must enter the sequence from memory. Sequence length increases after each correct answer. Memory accuracy and maximum level reached are both recorded.</p>
       </div>
       <div class="module-card">
         <div class="module-tag">Module 4 · Biometric</div>
         <h4>Biometric Intake</h4>
-        <p>Age, resting heart rate, body weight, height, and sex are collected. BMI is computed automatically. These variables are incorporated into the risk formula alongside the neurocognitive scores.</p>
+        <p>Age, resting heart rate, body weight, height, and sex are collected. BMI is computed automatically from weight and height.</p>
       </div>
     </div>
     <hr class="about-divider">
     <div class="about-section">
-      <h3>The Risk Score</h3>
-      <p>Each module contributes a weighted sub-score to a composite risk index out of 100. The scoring formula is a placeholder during this development phase and will be replaced with a clinically validated equation. The five components are: age-related risk, BMI-related risk, heart rate, neurocognitive index (reaction time, variability, decision accuracy, memory accuracy), and a sex-based adjustment factor derived from epidemiological baselines.</p>
-    </div>
-    <hr class="about-divider">
-    <div class="about-section">
-      <h3>Data & Privacy</h3>
-      <p>All data entered into HROSE is stored locally in your browser using <code style="font-size:12px;background:var(--card);padding:2px 6px;border-radius:4px">localStorage</code>. Nothing is transmitted to any server. Accounts are stored locally on your device and are not linked to any external identity system. Clearing your browser data will erase all saved results.</p>
+      <h3>Data Collection</h3>
+      <p>All responses are submitted directly to a secure research spreadsheet upon completion. No risk score is shown to participants — data is retained exclusively for researcher analysis. Participation is voluntary and anonymous unless a username is provided.</p>
     </div>
     <div class="about-note">
-      This tool is intended for educational and research exploration only. The risk score it produces is not a clinical diagnosis. Do not use HROSE as a substitute for professional medical evaluation, blood pressure measurement, or clinical cardiovascular risk assessment.
+      This tool is intended for educational and research exploration only. It does not produce a clinical diagnosis. Do not use HROSE as a substitute for professional medical evaluation or clinical cardiovascular risk assessment.
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════
+<!-- ══════════════════════════════
      JAVASCRIPT
-════════════════════════════════ -->
+══════════════════════════════ -->
 <script>
+/* ─────────────────────────────────────────────
+   !! PASTE YOUR GOOGLE APPS SCRIPT URL HERE !!
+───────────────────────────────────────────── */
+var SHEET_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec";
+
 /* ── VISIT COUNTER ── */
 (function(){
-  let v=parseInt(localStorage.getItem('hrose_visits')||'0')+1;
-  localStorage.setItem('hrose_visits',v);
-  let fmt=v.toLocaleString();
-  let vb=document.getElementById('visit-badge');
-  let vh=document.getElementById('visits-hero');
-  if(vb)vb.textContent=fmt+' visits';
-  if(vh)vh.textContent=fmt;
+  var v = parseInt(localStorage.getItem('hrose_visits') || '0') + 1;
+  localStorage.setItem('hrose_visits', v);
+  var fmt = v.toLocaleString();
+  var vb = document.getElementById('visit-badge');
+  var vh = document.getElementById('visits-hero');
+  if (vb) vb.textContent = fmt + ' visits';
+  if (vh) vh.textContent = fmt;
 })();
 
 /* ── AUTH ── */
-let currentUser=null;
+var currentUser = null;
 
-function getUsers(){return JSON.parse(localStorage.getItem('hrose_users')||'{}')}
-function saveUsers(u){localStorage.setItem('hrose_users',JSON.stringify(u))}
-function getHistory(username){return JSON.parse(localStorage.getItem('hrose_hist_'+username)||'[]')}
-function saveHistory(username,h){localStorage.setItem('hrose_hist_'+username,JSON.stringify(h))}
+function getUsers(){ return JSON.parse(localStorage.getItem('hrose_users') || '{}'); }
+function saveUsers(u){ localStorage.setItem('hrose_users', JSON.stringify(u)); }
 
 function switchTab(tab){
-  document.getElementById('form-login').style.display=tab==='login'?'block':'none';
-  document.getElementById('form-register').style.display=tab==='register'?'block':'none';
-  document.getElementById('tab-login').className='auth-tab'+(tab==='login'?' active':'');
-  document.getElementById('tab-register').className='auth-tab'+(tab==='register'?' active':'');
-  document.getElementById('login-err').textContent='';
-  document.getElementById('reg-err').textContent='';
+  document.getElementById('form-login').style.display = tab === 'login' ? 'block' : 'none';
+  document.getElementById('form-register').style.display = tab === 'register' ? 'block' : 'none';
+  document.getElementById('tab-login').className = 'auth-tab' + (tab === 'login' ? ' active' : '');
+  document.getElementById('tab-register').className = 'auth-tab' + (tab === 'register' ? ' active' : '');
+  document.getElementById('login-err').textContent = '';
+  document.getElementById('reg-err').textContent = '';
 }
 
 function doLogin(){
-  let u=document.getElementById('login-user').value.trim();
-  let p=document.getElementById('login-pass').value;
-  let users=getUsers();
-  if(!users[u]){document.getElementById('login-err').textContent='Username not found.';return;}
-  if(users[u].password!==btoa(p)){document.getElementById('login-err').textContent='Incorrect password.';return;}
-  currentUser={username:u,name:users[u].name};
+  var u = document.getElementById('login-user').value.trim();
+  var p = document.getElementById('login-pass').value;
+  var users = getUsers();
+  if (!users[u]){ document.getElementById('login-err').textContent = 'Username not found.'; return; }
+  if (users[u].password !== btoa(p)){ document.getElementById('login-err').textContent = 'Incorrect password.'; return; }
+  currentUser = { username: u, name: users[u].name };
   updateNavUser();
   goTo('scr-home');
 }
 
 function doRegister(){
-  let name=document.getElementById('reg-name').value.trim();
-  let u=document.getElementById('reg-user').value.trim();
-  let p=document.getElementById('reg-pass').value;
-  if(!name||!u||!p){document.getElementById('reg-err').textContent='All fields are required.';return;}
-  if(u.length<3){document.getElementById('reg-err').textContent='Username must be at least 3 characters.';return;}
-  if(p.length<4){document.getElementById('reg-err').textContent='Password must be at least 4 characters.';return;}
-  let users=getUsers();
-  if(users[u]){document.getElementById('reg-err').textContent='Username already taken.';return;}
-  users[u]={name,password:btoa(p)};
+  var name = document.getElementById('reg-name').value.trim();
+  var u = document.getElementById('reg-user').value.trim();
+  var p = document.getElementById('reg-pass').value;
+  if (!name || !u || !p){ document.getElementById('reg-err').textContent = 'All fields are required.'; return; }
+  if (u.length < 3){ document.getElementById('reg-err').textContent = 'Username must be at least 3 characters.'; return; }
+  if (p.length < 4){ document.getElementById('reg-err').textContent = 'Password must be at least 4 characters.'; return; }
+  var users = getUsers();
+  if (users[u]){ document.getElementById('reg-err').textContent = 'Username already taken.'; return; }
+  users[u] = { name: name, password: btoa(p) };
   saveUsers(users);
-  currentUser={username:u,name};
+  currentUser = { username: u, name: name };
   updateNavUser();
   goTo('scr-home');
 }
 
 function doLogout(){
-  currentUser=null;
+  currentUser = null;
   updateNavUser();
   goTo('scr-home');
 }
 
 function updateNavUser(){
-  let navHome=document.getElementById('nav-home');
-  if(currentUser){
-    let initials=currentUser.name.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
-    navHome.innerHTML=`
-      <span class="nav-visit" id="visit-badge">${(parseInt(localStorage.getItem('hrose_visits')||'0')).toLocaleString()} visits</span>
-      <a onclick="goTo('scr-about')">About</a>
-      <div class="nav-user"><div class="avatar">${initials}</div>${currentUser.name}</div>
-      <a onclick="showDash()">Dashboard</a>
-      <a onclick="doLogout()">Sign Out</a>
-    `;
+  var navHome = document.getElementById('nav-home');
+  var visits = (parseInt(localStorage.getItem('hrose_visits') || '0')).toLocaleString();
+  if (currentUser){
+    var initials = currentUser.name.split(' ').map(function(w){ return w[0]; }).slice(0,2).join('').toUpperCase();
+    navHome.innerHTML =
+      '<span class="nav-visit">' + visits + ' visits</span>' +
+      '<a onclick="goTo(\'scr-about\')">About</a>' +
+      '<div class="nav-user"><div class="avatar">' + initials + '</div>' + currentUser.name + '</div>' +
+      '<a onclick="doLogout()">Sign Out</a>';
   } else {
-    navHome.innerHTML=`
-      <span class="nav-visit" id="visit-badge">${(parseInt(localStorage.getItem('hrose_visits')||'0')).toLocaleString()} visits</span>
-      <a onclick="goTo('scr-about')">About</a>
-      <a onclick="goTo('scr-auth')">Sign In</a>
-    `;
+    navHome.innerHTML =
+      '<span class="nav-visit">' + visits + ' visits</span>' +
+      '<a onclick="goTo(\'scr-about\')">About</a>' +
+      '<a onclick="goTo(\'scr-auth\')">Sign In</a>';
   }
 }
 
-function userLabel(){return currentUser?currentUser.name:'Guest';}
+function userLabel(){ return currentUser ? currentUser.name : 'Guest'; }
+
 function setNavForScreen(navId){
-  let el=document.getElementById(navId);
-  if(!el)return;
-  if(currentUser){
-    let initials=currentUser.name.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
-    el.innerHTML=`<div class="nav-user"><div class="avatar">${initials}</div>${currentUser.name}</div><a onclick="showDash()">Dashboard</a>`;
+  var el = document.getElementById(navId);
+  if (!el) return;
+  if (currentUser){
+    var initials = currentUser.name.split(' ').map(function(w){ return w[0]; }).slice(0,2).join('').toUpperCase();
+    el.innerHTML = '<div class="nav-user"><div class="avatar">' + initials + '</div>' + currentUser.name + '</div>';
   } else {
-    el.innerHTML=`<a onclick="goTo('scr-auth')">Sign In</a>`;
+    el.innerHTML = '';
   }
 }
 
 /* ── NAVIGATION ── */
 function goTo(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 }
 
-function confirmExit(){if(confirm('Exit assessment? Progress will be lost.'))goTo('scr-home');}
-
-function handleStartClick(){
-  startAssessment();
+function confirmExit(){
+  if (confirm('Exit assessment? Progress will be lost.')) goTo('scr-home');
 }
 
-function showDash(){
-  goTo('scr-dash');
-  loadDash();
-}
+function handleStartClick(){ startAssessment(); }
 
 /* ── STATE ── */
-let S={};
+var S = {};
 
 function startAssessment(){
-  S={
-    reactionTimes:[],reactTrial:0,reactPhase:'idle',reactTimer:null,reactStart:0,
-    decScores:[],decRound:0,decStart:0,decCurrentNum:0,
-    memLevel:4,memCorrect:0,memTotal:0,memPhase:'ready',memCurrentSeq:[],
+  S = {
+    reactionTimes: [], reactTrial: 0, reactPhase: 'idle', reactTimer: null, reactStart: 0,
+    decScores: [], decRound: 0, decStart: 0, decCurrentNum: 0,
+    memLevel: 4, memCorrect: 0, memTotal: 0, memPhase: 'ready', memCurrentSeq: [], memMaxLevel: 4,
   };
   goTo('scr-reaction');
   setNavForScreen('nav-reaction');
-  document.getElementById('react-step-user').textContent=userLabel();
+  document.getElementById('react-step-user').textContent = userLabel();
   initReaction();
 }
 
 /* ── REACTION ── */
 function initReaction(){
-  let dots=document.getElementById('trial-dots');
-  dots.innerHTML='';
-  for(let i=0;i<5;i++){
-    let d=document.createElement('div');
-    d.className='trial-dot'+(i===0?' active':'');
-    d.id='rdot-'+i;
+  var dots = document.getElementById('trial-dots');
+  dots.innerHTML = '';
+  for (var i = 0; i < 5; i++){
+    var d = document.createElement('div');
+    d.className = 'trial-dot' + (i === 0 ? ' active' : '');
+    d.id = 'rdot-' + i;
     dots.appendChild(d);
   }
-  let box=document.getElementById('react-box');
-  box.className='react-area idle';
-  box.onclick=handleReactClick;
-  document.getElementById('react-msg').textContent='Click to begin';
-  document.getElementById('react-sub').textContent='';
-  document.getElementById('trial-list').innerHTML='';
-  S.reactPhase='idle';
-  S.reactTrial=0;
+  var box = document.getElementById('react-box');
+  box.className = 'react-area idle';
+  box.onclick = handleReactClick;
+  document.getElementById('react-msg').textContent = 'Click to begin';
+  document.getElementById('react-sub').textContent = '';
+  document.getElementById('trial-list').innerHTML = '';
+  S.reactPhase = 'idle';
+  S.reactTrial = 0;
 }
 
 function handleReactClick(){
-  let box=document.getElementById('react-box');
-  let msg=document.getElementById('react-msg');
-  let sub=document.getElementById('react-sub');
-  if(S.reactPhase==='idle'){
-    S.reactPhase='wait';
-    box.className='react-area wait';
-    msg.textContent='Wait…';
-    sub.textContent='Do not click yet';
-    S.reactTimer=setTimeout(()=>{
-      if(S.reactPhase!=='wait')return;
-      S.reactPhase='go';
-      box.className='react-area go';
-      msg.textContent='Click!';
-      sub.textContent='';
-      S.reactStart=Date.now();
-    },1500+Math.random()*2500);
-  } else if(S.reactPhase==='wait'){
+  var box = document.getElementById('react-box');
+  var msg = document.getElementById('react-msg');
+  var sub = document.getElementById('react-sub');
+  if (S.reactPhase === 'idle'){
+    S.reactPhase = 'wait';
+    box.className = 'react-area wait';
+    msg.textContent = 'Wait…';
+    sub.textContent = 'Do not click yet';
+    S.reactTimer = setTimeout(function(){
+      if (S.reactPhase !== 'wait') return;
+      S.reactPhase = 'go';
+      box.className = 'react-area go';
+      msg.textContent = 'Click!';
+      sub.textContent = '';
+      S.reactStart = Date.now();
+    }, 1500 + Math.random() * 2500);
+  } else if (S.reactPhase === 'wait'){
     clearTimeout(S.reactTimer);
-    S.reactPhase='idle';
-    box.className='react-area early';
-    msg.textContent='Too early!';
-    sub.textContent='Click to try again';
-    setTimeout(()=>{if(S.reactPhase==='idle'){box.className='react-area idle';msg.textContent='Click to try again';}},900);
-  } else if(S.reactPhase==='go'){
-    let rt=Date.now()-S.reactStart;
+    S.reactPhase = 'idle';
+    box.className = 'react-area early';
+    msg.textContent = 'Too early!';
+    sub.textContent = 'Click to try again';
+    setTimeout(function(){
+      if (S.reactPhase === 'idle'){ box.className = 'react-area idle'; msg.textContent = 'Click to try again'; }
+    }, 900);
+  } else if (S.reactPhase === 'go'){
+    var rt = Date.now() - S.reactStart;
     S.reactionTimes.push(rt);
-    S.reactPhase='idle';
-    document.getElementById('rdot-'+S.reactTrial).className='trial-dot done';
-    addTrialItem(S.reactTrial,rt);
+    S.reactPhase = 'idle';
+    document.getElementById('rdot-' + S.reactTrial).className = 'trial-dot done';
+    addTrialItem(S.reactTrial, rt);
     S.reactTrial++;
-    if(S.reactTrial>=5){
-      msg.textContent='Complete!';
-      sub.textContent='Proceeding…';
-      box.className='react-area idle';
-      box.onclick=null;
-      setTimeout(()=>{startDecision();},1000);
+    if (S.reactTrial >= 5){
+      msg.textContent = 'Complete!';
+      sub.textContent = 'Proceeding…';
+      box.className = 'react-area idle';
+      box.onclick = null;
+      setTimeout(function(){ startDecision(); }, 1000);
     } else {
-      box.className='react-area idle';
-      msg.textContent='Click for trial '+(S.reactTrial+1);
-      sub.textContent='Trial '+(S.reactTrial+1)+' of 5';
-      document.getElementById('rdot-'+S.reactTrial).className='trial-dot active';
+      box.className = 'react-area idle';
+      msg.textContent = 'Click for trial ' + (S.reactTrial + 1);
+      sub.textContent = 'Trial ' + (S.reactTrial + 1) + ' of 5';
+      document.getElementById('rdot-' + S.reactTrial).className = 'trial-dot active';
     }
   }
 }
 
-function addTrialItem(i,rt){
-  let list=document.getElementById('trial-list');
-  let q=rt<200?'Excellent':rt<300?'Good':rt<450?'Average':'Slow';
-  let div=document.createElement('div');
-  div.className='trial-item';
-  div.innerHTML=`<span style="color:var(--text-muted)">Trial ${i+1}</span><span class="trial-ms">${rt} ms</span><span class="trial-qual">${q}</span>`;
+function addTrialItem(i, rt){
+  var list = document.getElementById('trial-list');
+  var q = rt < 200 ? 'Excellent' : rt < 300 ? 'Good' : rt < 450 ? 'Average' : 'Slow';
+  var div = document.createElement('div');
+  div.className = 'trial-item';
+  div.innerHTML = '<span style="color:var(--text-muted)">Trial ' + (i+1) + '</span><span class="trial-ms">' + rt + ' ms</span><span class="trial-qual">' + q + '</span>';
   list.appendChild(div);
 }
 
 /* ── DECISION ── */
 function startDecision(){
-  S.decRound=0;S.decScores=[];
+  S.decRound = 0; S.decScores = [];
   goTo('scr-decision');
   setNavForScreen('nav-decision');
-  document.getElementById('dec-step-user').textContent=userLabel();
-  let dotsEl=document.getElementById('dec-dots');
-  dotsEl.innerHTML='';
-  for(let i=0;i<10;i++){let d=document.createElement('div');d.className='dec-dot';d.id='ddot-'+i;dotsEl.appendChild(d);}
+  document.getElementById('dec-step-user').textContent = userLabel();
+  var dotsEl = document.getElementById('dec-dots');
+  dotsEl.innerHTML = '';
+  for (var i = 0; i < 10; i++){
+    var d = document.createElement('div');
+    d.className = 'dec-dot';
+    d.id = 'ddot-' + i;
+    dotsEl.appendChild(d);
+  }
   nextDecision();
 }
 
 function nextDecision(){
-  if(S.decRound>=10){setTimeout(()=>startMemory(),400);return;}
-  let n=Math.floor(Math.random()*99)+1;
-  S.decCurrentNum=n;S.decStart=Date.now();
-  document.getElementById('dec-number').textContent=n;
-  document.getElementById('dec-counter').textContent='Round '+(S.decRound+1)+' of 10';
-  let d=document.getElementById('ddot-'+S.decRound);
-  if(d)d.className='dec-dot active-dot';
-  document.getElementById('btn-odd').className='choice-btn';
-  document.getElementById('btn-even').className='choice-btn';
-  document.getElementById('btn-odd').disabled=false;
-  document.getElementById('btn-even').disabled=false;
+  if (S.decRound >= 10){ setTimeout(function(){ startMemory(); }, 400); return; }
+  var n = Math.floor(Math.random() * 99) + 1;
+  S.decCurrentNum = n; S.decStart = Date.now();
+  document.getElementById('dec-number').textContent = n;
+  document.getElementById('dec-counter').textContent = 'Round ' + (S.decRound + 1) + ' of 10';
+  var d = document.getElementById('ddot-' + S.decRound);
+  if (d) d.className = 'dec-dot active-dot';
+  document.getElementById('btn-odd').className = 'choice-btn';
+  document.getElementById('btn-even').className = 'choice-btn';
+  document.getElementById('btn-odd').disabled = false;
+  document.getElementById('btn-even').disabled = false;
 }
 
 function decisionAnswer(ans){
-  let rt=Date.now()-S.decStart;
-  let correct=(ans==='odd'&&S.decCurrentNum%2!==0)||(ans==='even'&&S.decCurrentNum%2===0);
-  document.getElementById('btn-'+ans).className='choice-btn '+(correct?'correct':'wrong');
-  document.getElementById('btn-odd').disabled=true;
-  document.getElementById('btn-even').disabled=true;
-  let d=document.getElementById('ddot-'+S.decRound);
-  if(d)d.className='dec-dot '+(correct?'correct-dot':'wrong-dot');
-  S.decScores.push({rt,correct});
+  var rt = Date.now() - S.decStart;
+  var correct = (ans === 'odd' && S.decCurrentNum % 2 !== 0) || (ans === 'even' && S.decCurrentNum % 2 === 0);
+  document.getElementById('btn-' + ans).className = 'choice-btn ' + (correct ? 'correct' : 'wrong');
+  document.getElementById('btn-odd').disabled = true;
+  document.getElementById('btn-even').disabled = true;
+  var d = document.getElementById('ddot-' + S.decRound);
+  if (d) d.className = 'dec-dot ' + (correct ? 'correct-dot' : 'wrong-dot');
+  S.decScores.push({ rt: rt, correct: correct });
   S.decRound++;
-  setTimeout(nextDecision,500);
+  setTimeout(nextDecision, 500);
 }
 
 /* ── MEMORY ── */
 function startMemory(){
-  S.memLevel=4;S.memCorrect=0;S.memTotal=0;S.memPhase='ready';
+  S.memLevel = 4; S.memCorrect = 0; S.memTotal = 0; S.memPhase = 'ready'; S.memMaxLevel = 4;
   goTo('scr-memory');
   setNavForScreen('nav-memory');
-  document.getElementById('mem-step-user').textContent=userLabel();
-  document.getElementById('mem-display').textContent='Ready?';
-  document.getElementById('mem-display').className='mem-display';
-  document.getElementById('mem-prompt').textContent='You will see a '+S.memLevel+'-digit sequence.';
-  document.getElementById('mem-input').value='';
-  document.getElementById('mem-input').disabled=true;
-  document.getElementById('mem-btn').textContent='Show Sequence';
-  document.getElementById('mem-btn').disabled=false;
+  document.getElementById('mem-step-user').textContent = userLabel();
+  document.getElementById('mem-display').textContent = 'Ready?';
+  document.getElementById('mem-display').className = 'mem-display';
+  document.getElementById('mem-prompt').textContent = 'You will see a ' + S.memLevel + '-digit sequence.';
+  document.getElementById('mem-input').value = '';
+  document.getElementById('mem-input').disabled = true;
+  document.getElementById('mem-btn').textContent = 'Show Sequence';
+  document.getElementById('mem-btn').disabled = false;
+  document.getElementById('mem-btn').onclick = memoryAction;
 }
 
 function memoryAction(){
-  if(S.memPhase==='ready'||S.memPhase==='next'){
-    S.memCurrentSeq=Array.from({length:S.memLevel},()=>Math.floor(Math.random()*10));
-    document.getElementById('mem-display').textContent=S.memCurrentSeq.join(' ');
-    document.getElementById('mem-display').className='mem-display';
-    document.getElementById('mem-prompt').textContent='Memorise this sequence…';
-    document.getElementById('mem-input').disabled=true;
-    document.getElementById('mem-btn').disabled=true;
-    document.getElementById('mem-btn').textContent='Memorising…';
-    S.memPhase='showing';
-    let dur=S.memLevel<=4?2500:S.memLevel<=6?3200:4000;
-    setTimeout(()=>{
-      document.getElementById('mem-display').textContent='• '.repeat(S.memLevel).trim();
-      document.getElementById('mem-display').className='mem-display faded';
-      document.getElementById('mem-prompt').textContent='Enter the sequence:';
-      document.getElementById('mem-input').disabled=false;
-      document.getElementById('mem-input').value='';
+  if (S.memPhase === 'ready' || S.memPhase === 'next'){
+    S.memCurrentSeq = Array.from({ length: S.memLevel }, function(){ return Math.floor(Math.random() * 10); });
+    document.getElementById('mem-display').textContent = S.memCurrentSeq.join(' ');
+    document.getElementById('mem-display').className = 'mem-display';
+    document.getElementById('mem-prompt').textContent = 'Memorise this sequence…';
+    document.getElementById('mem-input').disabled = true;
+    document.getElementById('mem-btn').disabled = true;
+    document.getElementById('mem-btn').textContent = 'Memorising…';
+    S.memPhase = 'showing';
+    var dur = S.memLevel <= 4 ? 2500 : S.memLevel <= 6 ? 3200 : 4000;
+    setTimeout(function(){
+      document.getElementById('mem-display').textContent = '• '.repeat(S.memLevel).trim();
+      document.getElementById('mem-display').className = 'mem-display faded';
+      document.getElementById('mem-prompt').textContent = 'Enter the sequence:';
+      document.getElementById('mem-input').disabled = false;
+      document.getElementById('mem-input').value = '';
       document.getElementById('mem-input').focus();
-      document.getElementById('mem-btn').disabled=false;
-      document.getElementById('mem-btn').textContent='Submit Answer';
-      S.memPhase='input';
-    },dur);
-  } else if(S.memPhase==='input'){
-    let raw=document.getElementById('mem-input').value.replace(/\s+/g,'').split('').map(Number);
-    let correct=JSON.stringify(raw)===JSON.stringify(S.memCurrentSeq);
+      document.getElementById('mem-btn').disabled = false;
+      document.getElementById('mem-btn').textContent = 'Submit Answer';
+      S.memPhase = 'input';
+    }, dur);
+  } else if (S.memPhase === 'input'){
+    var raw = document.getElementById('mem-input').value.replace(/\s+/g, '').split('').map(Number);
+    var correct = JSON.stringify(raw) === JSON.stringify(S.memCurrentSeq);
     S.memTotal++;
-    if(correct){
+    if (correct){
       S.memCorrect++;
-      document.getElementById('mem-prompt').textContent='Correct! ✓ Increasing difficulty…';
-      S.memLevel=Math.min(S.memLevel+1,8);
+      S.memLevel = Math.min(S.memLevel + 1, 8);
+      S.memMaxLevel = Math.max(S.memMaxLevel, S.memLevel);
+      document.getElementById('mem-prompt').textContent = 'Correct! ✓ Increasing difficulty…';
     } else {
-      document.getElementById('mem-prompt').textContent='Incorrect. Answer was: '+S.memCurrentSeq.join(' ');
+      document.getElementById('mem-prompt').textContent = 'Incorrect. Answer was: ' + S.memCurrentSeq.join(' ');
     }
-    document.getElementById('mem-input').disabled=true;
-    S.memPhase='next';
-    if(S.memTotal>=3){
-      document.getElementById('mem-btn').textContent='Continue →';
-      document.getElementById('mem-btn').onclick=()=>{
+    document.getElementById('mem-input').disabled = true;
+    S.memPhase = 'next';
+    if (S.memTotal >= 3){
+      document.getElementById('mem-btn').textContent = 'Continue →';
+      document.getElementById('mem-btn').onclick = function(){
         goTo('scr-bio');
         setNavForScreen('nav-bio');
-        document.getElementById('bio-step-user').textContent=userLabel();
+        document.getElementById('bio-step-user').textContent = userLabel();
       };
     } else {
-      document.getElementById('mem-btn').textContent='Next sequence';
+      document.getElementById('mem-btn').textContent = 'Next sequence';
+      document.getElementById('mem-btn').onclick = memoryAction;
     }
   }
 }
 
-/* ── RISK CALCULATION ── */
-function calcRisk(){
-  let age=parseInt(document.getElementById('bio-age').value);
-  let hr=parseInt(document.getElementById('bio-hr').value);
-  let wt=parseFloat(document.getElementById('bio-weight').value);
-  let ht=parseFloat(document.getElementById('bio-height').value);
-  let sex=document.getElementById('bio-sex').value;
-  if([age,hr,wt,ht].some(isNaN)||!sex){alert('Please complete all fields.');return;}
-  let bmi=wt/((ht/100)**2);
-  let times=S.reactionTimes;
-  let meanRT=times.reduce((a,b)=>a+b,0)/times.length;
-  let sdRT=Math.sqrt(times.reduce((a,b)=>a+(b-meanRT)**2,0)/times.length);
-  let decCorrect=S.decScores.filter(d=>d.correct).length;
-  let decMeanRT=S.decScores.reduce((a,b)=>a+b.rt,0)/S.decScores.length;
-  let memAcc=S.memCorrect/Math.max(S.memTotal,1);
+/* ── SUBMIT TO GOOGLE SHEETS ── */
+function submitAssessment(){
+  var age    = parseInt(document.getElementById('bio-age').value);
+  var hr     = parseInt(document.getElementById('bio-hr').value);
+  var wt     = parseFloat(document.getElementById('bio-weight').value);
+  var ht     = parseFloat(document.getElementById('bio-height').value);
+  var sex    = document.getElementById('bio-sex').value;
 
-  // Placeholder formula — to be replaced with validated equation
-  let rAge=Math.min((Math.max(age-18,0))/62*28,28);
-  let rBMI=bmi<18.5?4:bmi<25?0:bmi<30?8:bmi<35?16:22;
-  let rHR=hr<60?3:hr<80?0:hr<90?5:hr<100?10:16;
-  let rNeuro=(meanRT>500?8:meanRT>350?4:0)+(sdRT>80?6:sdRT>50?3:0)+(decCorrect<7?6:decCorrect<9?3:0)+(memAcc<0.5?5:memAcc<1?2:0);
-  let rSex=sex==='male'?3:0;
-  let total=Math.min(Math.round(rAge+rBMI+rHR+rNeuro+rSex),100);
-
-  let tier=total<30?'Low Risk':total<60?'Moderate Risk':'High Risk';
-  let tierClass=total<30?'tier-low':total<60?'tier-mod':'tier-high';
-  let arcLen=515.2;
-  let offset=arcLen-(total/100*arcLen);
-  let arcColor=total<30?'#85ffba':total<60?'#ffd580':'#ff9090';
-
-  goTo('scr-results');
-  setNavForScreen('nav-results');
-
-  setTimeout(()=>{
-    document.getElementById('risk-pct').textContent=total;
-    let arc=document.getElementById('risk-arc');
-    arc.style.strokeDashoffset=offset;
-    arc.style.stroke=arcColor;
-  },200);
-
-  document.getElementById('risk-tier-wrap').innerHTML=`<span class="risk-tier ${tierClass}">${tier}</span>`;
-
-  document.getElementById('result-cards').innerHTML=`
-    <div class="result-card"><div class="rc-val">${Math.round(meanRT)} ms</div><div class="rc-lbl">Mean reaction time</div></div>
-    <div class="result-card"><div class="rc-val">${Math.round(sdRT)} ms</div><div class="rc-lbl">Reaction variability</div></div>
-    <div class="result-card"><div class="rc-val">${decCorrect}/10</div><div class="rc-lbl">Decision accuracy</div></div>
-    <div class="result-card"><div class="rc-val">${(bmi).toFixed(1)}</div><div class="rc-lbl">BMI</div></div>
-    <div class="result-card"><div class="rc-val">${hr} bpm</div><div class="rc-lbl">Resting heart rate</div></div>
-    <div class="result-card"><div class="rc-val">${Math.round(memAcc*100)}%</div><div class="rc-lbl">Memory accuracy</div></div>
-  `;
-
-  document.getElementById('breakdown').innerHTML=`
-    <div class="breakdown-hd">Score Breakdown</div>
-    ${brow('Age factor',Math.round(rAge),28)}
-    ${brow('BMI',Math.round(rBMI),22)}
-    ${brow('Heart rate',Math.round(rHR),16)}
-    ${brow('Neurocognitive index',Math.round(rNeuro),25)}
-    ${brow('Sex adjustment',Math.round(rSex),3)}
-    <div class="breakdown-row" style="margin-top:8px"><span class="br-lbl" style="color:#fff;font-weight:500">Total risk score</span><span class="br-val" style="font-size:18px">${total} / 100</span></div>
-  `;
-
-  let entry={date:new Date().toLocaleString(),score:total,tier,meanRT:Math.round(meanRT),sdRT:Math.round(sdRT),bmi:parseFloat(bmi.toFixed(1)),hr,memAcc:Math.round(memAcc*100),decCorrect};
-  if(currentUser){
-    let h=getHistory(currentUser.username);
-    h.unshift(entry);if(h.length>30)h=h.slice(0,30);
-    saveHistory(currentUser.username,h);
-  } else {
-    let h=JSON.parse(localStorage.getItem('hrose_guest_hist')||'[]');
-    h.unshift(entry);if(h.length>5)h=h.slice(0,5);
-    localStorage.setItem('hrose_guest_hist',JSON.stringify(h));
+  if ([age, hr, wt, ht].some(isNaN) || !sex){
+    alert('Please complete all fields before submitting.');
+    return;
   }
+
+  var bmi = parseFloat((wt / ((ht / 100) ** 2)).toFixed(1));
+  var times = S.reactionTimes;
+  var meanRT = Math.round(times.reduce(function(a,b){ return a+b; }, 0) / times.length);
+  var sdRT   = Math.round(Math.sqrt(times.reduce(function(a,b){ return a + (b - meanRT) ** 2; }, 0) / times.length));
+  var decCorrect = S.decScores.filter(function(d){ return d.correct; }).length;
+  var decMeanRT  = Math.round(S.decScores.reduce(function(a,b){ return a + b.rt; }, 0) / S.decScores.length);
+  var memAcc     = Math.round((S.memCorrect / Math.max(S.memTotal, 1)) * 100);
+
+  var payload = {
+    username:    currentUser ? currentUser.username : 'guest',
+    age:         age,
+    hr:          hr,
+    weight:      wt,
+    height:      ht,
+    bmi:         bmi,
+    sex:         sex,
+    rt1:         times[0] || '',
+    rt2:         times[1] || '',
+    rt3:         times[2] || '',
+    rt4:         times[3] || '',
+    rt5:         times[4] || '',
+    meanRT:      meanRT,
+    sdRT:        sdRT,
+    decCorrect:  decCorrect,
+    decMeanRT:   decMeanRT,
+    memAcc:      memAcc,
+    memMaxLevel: S.memMaxLevel
+  };
+
+  /* ── Show thank you screen immediately ── */
+  goTo('scr-thankyou');
+  setStatus('sending', 'Submitting your responses…', true);
+
+  /* ── POST to Google Sheets via no-cors fetch ── */
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(){
+    /* no-cors means we can't read the response body, but if we got here it went through */
+    setStatus('ok', 'Responses recorded. Thank you!', false);
+  })
+  .catch(function(err){
+    setStatus('err', 'Submission failed — please inform a member of staff.', false);
+    console.error('HROSE submit error:', err);
+  });
 }
 
-function brow(label,val,max){
-  return `<div class="breakdown-row"><span class="br-lbl">${label}</span><span class="br-val">${val} / ${max}</span></div>`;
-}
-
-/* ── DASHBOARD ── */
-function loadDash(){
-  let el=document.getElementById('dash-list');
-  let labelEl=document.getElementById('dash-user-label');
-  setNavForScreen('nav-dash');
-  let history;
-  if(currentUser){
-    history=getHistory(currentUser.username);
-    labelEl.textContent='Showing saved sessions for '+currentUser.name+'.';
-  } else {
-    history=JSON.parse(localStorage.getItem('hrose_guest_hist')||'[]');
-    labelEl.textContent='You are browsing as a guest. Sign in to save unlimited sessions.';
-  }
-  if(!history.length){
-    el.innerHTML='<p class="dash-empty">No assessments recorded yet.</p>';return;
-  }
-  el.innerHTML=history.map(r=>`
-    <div class="dash-entry">
-      <div>
-        <div class="dash-score">${r.score} <span style="font-size:16px;opacity:.6">/ 100</span></div>
-        <div class="dash-meta">${r.date}</div>
-      </div>
-      <div class="dash-details">
-        <span class="dash-detail">RT ${r.meanRT} ms ±${r.sdRT}</span>
-        <span class="dash-detail">HR ${r.hr} bpm</span>
-        <span class="dash-detail">BMI ${r.bmi}</span>
-        <span class="dash-detail">Decision ${r.decCorrect}/10</span>
-        <span class="dash-detail">Memory ${r.memAcc}%</span>
-      </div>
-      <span class="risk-tier ${r.score<30?'tier-low':r.score<60?'tier-mod':'tier-high'}" style="font-size:10px">${r.tier}</span>
-    </div>
-  `).join('');
-}
-
-function clearHistory(){
-  if(!confirm('Clear all history? This cannot be undone.'))return;
-  if(currentUser){saveHistory(currentUser.username,[]);}
-  else{localStorage.removeItem('hrose_guest_hist');}
-  loadDash();
+function setStatus(type, msg, spinner){
+  var el   = document.getElementById('ty-status');
+  var spin = document.getElementById('ty-spinner');
+  var txt  = document.getElementById('ty-status-text');
+  el.className = 'ty-status ' + type;
+  spin.style.display = spinner ? 'block' : 'none';
+  txt.textContent = msg;
 }
 
 /* ── INIT ── */
