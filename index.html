@@ -113,6 +113,15 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .bio-input:focus,.bio-select:focus{border-color:var(--border-strong)}
 .bio-select option{background:#8b2020;color:#fff}
 .bio-unit{font-size:11px;color:var(--text-dim);margin-top:2px}
+.bio-section-divider{grid-column:1/-1;border:none;border-top:0.5px solid var(--border);margin:8px 0}
+.bio-section-heading{grid-column:1/-1;font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-muted);padding-top:4px}
+.radio-group{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.radio-option{display:flex;align-items:center;gap:10px;background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius-sm);padding:11px 14px;cursor:pointer;transition:background .15s,border-color .15s;font-size:14px;font-weight:300}
+.radio-option:hover{background:var(--card-solid)}
+.radio-option input[type=radio],.radio-option input[type=checkbox]{accent-color:#fff;width:15px;height:15px;flex-shrink:0;cursor:pointer}
+.radio-option.selected{background:rgba(255,255,255,0.18);border-color:var(--border-strong)}
+.radio-row{display:flex;gap:10px}
+.radio-row .radio-option{flex:1;justify-content:center}
 .ty-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 40px;text-align:center}
 .ty-icon{font-size:64px;margin-bottom:28px;line-height:1}
 .ty-title{font-family:'DM Serif Display',serif;font-size:52px;line-height:1.1;margin-bottom:16px}
@@ -140,6 +149,43 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
 .about-note{font-size:12px;color:var(--text-dim);background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px;line-height:1.65;margin-top:32px}
 .author-tag{display:inline-block;margin-top:24px;font-size:12px;color:var(--text-dim);letter-spacing:.5px}
 .author-tag strong{color:var(--text-muted);font-weight:500}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);z-index:1000;display:none;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.active{display:flex}
+.modal-box{background:linear-gradient(145deg,#b83030,#c0521a);border:0.5px solid var(--border-strong);border-radius:var(--radius-lg);padding:36px;max-width:460px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,0.4);animation:fadeUp .3s ease}
+.modal-title{font-family:'DM Serif Display',serif;font-size:24px;margin-bottom:8px}
+.modal-sub{font-size:14px;font-weight:300;color:var(--text-muted);line-height:1.6;margin-bottom:24px}
+.modal-choices{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.modal-choice{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px;cursor:pointer;font-size:15px;font-weight:300;transition:background .15s,border-color .15s;text-align:left;color:#fff;font-family:'DM Sans',sans-serif;width:100%}
+.modal-choice:hover{background:var(--card-solid);border-color:var(--border-strong)}
+.modal-choice.selected{background:rgba(255,255,255,0.22);border-color:#fff}
+.modal-close{font-size:12px;cursor:pointer;text-decoration:underline;background:none;border:none;color:var(--text-muted);font-family:'DM Sans',sans-serif}
+.modal-close:hover{color:#fff}
+.consent-wrap{flex:1;padding:48px;max-width:720px;margin:0 auto;width:100%}
+.consent-box{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius);padding:28px 32px;max-height:420px;overflow-y:auto;margin-bottom:24px;font-size:14px;font-weight:300;color:var(--text-muted);line-height:1.8}
+.consent-box::-webkit-scrollbar{width:4px}
+.consent-box::-webkit-scrollbar-track{background:transparent}
+.consent-box::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.2);border-radius:2px}
+.consent-check-row{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:16px;cursor:pointer}
+.consent-check-row input[type=checkbox]{accent-color:#fff;width:16px;height:16px;flex-shrink:0;margin-top:2px;cursor:pointer}
+.consent-check-row span{font-size:13px;font-weight:300;color:var(--text-muted);line-height:1.55}
+.research-wrap{flex:1;padding:48px;max-width:720px;margin:0 auto;width:100%}
+.pdf-embed-area{width:100%;height:600px;border:0.5px solid var(--border);border-radius:var(--radius);background:var(--card);display:flex;align-items:center;justify-content:center;margin-top:24px;overflow:hidden}
+.pdf-embed-area iframe{width:100%;height:100%;border:none;border-radius:var(--radius)}
+.pdf-placeholder{text-align:center;color:var(--text-dim)}
+.pdf-placeholder p{font-size:13px;margin-top:8px;font-weight:300}
+.withdraw-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 40px;text-align:center}
+.withdraw-card{background:var(--card);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:40px;max-width:500px;width:100%}
+.withdraw-title{font-family:'DM Serif Display',serif;font-size:30px;margin-bottom:10px}
+.withdraw-sub{font-size:14px;font-weight:300;color:var(--text-muted);line-height:1.65;margin-bottom:24px}
+.withdraw-field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;text-align:left}
+.withdraw-label{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)}
+.withdraw-input{background:var(--card);border:0.5px solid var(--border);color:#fff;padding:12px 14px;border-radius:var(--radius-sm);font-size:14px;font-family:'DM Sans',sans-serif;font-weight:300;outline:none;transition:border-color .2s;width:100%}
+.withdraw-input:focus{border-color:var(--border-strong)}
+.withdraw-input::placeholder{color:var(--text-dim)}
+.withdraw-note{font-size:11px;color:var(--text-dim);line-height:1.65;margin-top:16px;text-align:left}
+.withdraw-status{font-size:13px;margin-top:14px;min-height:20px;color:var(--text-muted)}
+.withdraw-status.ok{color:#85ffba}
+.withdraw-status.err{color:#ffaaaa}
 .footer{text-align:center;padding:14px 40px 20px;border-top:0.5px solid var(--border);flex-shrink:0}
 .footer-inner{font-size:11px;color:var(--text-dim);line-height:1.8}
 </style>
@@ -262,7 +308,7 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
     <div class="progress-track"><div class="progress-fill" style="width:75%"></div></div>
     <p class="section-eyebrow">Cognitive Module 3</p>
     <h2 class="section-title">Working Memory</h2>
-    <p class="section-desc" id="mem-desc">Sequences grow longer as you answer correctly. The test ends the first time you get one wrong, provided you have completed at least three rounds.</p>
+    <p class="section-desc">Sequences grow longer as you answer correctly. The test ends the first time you get one wrong, provided you have completed at least three rounds.</p>
     <div class="mem-score" id="mem-score"></div>
     <div class="mem-display" id="mem-display">Ready?</div>
     <p class="mem-prompt" id="mem-prompt">Press Show Sequence to begin.</p>
@@ -313,6 +359,22 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
           <option value="other">Other / prefer not to say</option>
         </select>
       </div>
+      <hr class="bio-section-divider">
+      <p class="bio-section-heading">Clinical History</p>
+      <div class="bio-field full">
+        <label class="bio-label">Have you been diagnosed with hypertension (high blood pressure)?</label>
+        <div class="radio-row">
+          <label class="radio-option" id="htn-opt-yes" onclick="selectHtn('yes')">
+            <input type="radio" name="dx-htn" value="yes"> Yes
+          </label>
+          <label class="radio-option" id="htn-opt-no" onclick="selectHtn('no')">
+            <input type="radio" name="dx-htn" value="no"> No
+          </label>
+          <label class="radio-option" id="htn-opt-unknown" onclick="selectHtn('unknown')">
+            <input type="radio" name="dx-htn" value="unknown"> Unsure / Not tested
+          </label>
+        </div>
+      </div>
     </div>
     <button class="btn-primary" style="margin-top:28px;width:100%;border-radius:var(--radius)" onclick="submitAssessment()">Submit Assessment</button>
   </div>
@@ -324,7 +386,7 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
     <div class="nav-brand">HROSE<small>Hypertension Risk Online Sensory Evaluator</small></div>
   </nav>
   <div class="ty-wrap">
-    <div class="ty-icon">👏</div>
+    <div class="ty-icon">🌿</div>
     <h1 class="ty-title">Thank you.</h1>
     <p class="ty-sub">Your participation in this study is greatly appreciated.</p>
     <p class="ty-note">Your responses have been recorded and will contribute to ongoing cardiovascular health research. You may now close this window, or return to the home page.</p>
@@ -357,28 +419,28 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
       <div class="module-card">
         <div class="module-tag">Module 1 · Cognitive</div>
         <h4>Reaction Time</h4>
-        <p>A box switches from red to green at a random interval. Click the moment it turns green. Five trials are conducted. Mean reaction time and standard deviation across trials (variability) are both recorded. Elevated variability has been associated with reduced cardiovascular and neural efficiency in research literature.</p>
+        <p>A box switches from red to green at a random interval. Click the moment it turns green. Five trials are conducted. Mean reaction time and standard deviation across trials (variability) are both recorded.</p>
       </div>
       <div class="module-card">
         <div class="module-tag">Module 2 · Cognitive</div>
         <h4>Decision Speed</h4>
-        <p>Ten numbers are displayed in sequence. Classify each as odd or even as quickly as possible. Accuracy and per-trial response time are captured. Decision speed reflects prefrontal processing efficiency, which can be impacted by hypertensive states and reduced cerebrovascular perfusion.</p>
+        <p>Ten numbers are displayed in sequence. Classify each as odd or even as quickly as possible. Accuracy and per-trial response time are captured.</p>
       </div>
       <div class="module-card">
         <div class="module-tag">Module 3 · Cognitive</div>
         <h4>Working Memory (Adaptive Digit Span)</h4>
-        <p>A sequence of digits is briefly displayed, then hidden. You must enter the sequence from memory. Sequence length starts at 4 digits and increases by one with each correct answer (up to 8). The test ends the first time a wrong answer is given, provided at least three rounds have been completed. Your maximum span reached and overall accuracy are both recorded.</p>
+        <p>A sequence of digits is briefly displayed, then hidden. Sequence length starts at 4 digits and increases by one with each correct answer (up to 8). The test ends the first time a wrong answer is given, provided at least three rounds have been completed.</p>
       </div>
       <div class="module-card">
         <div class="module-tag">Module 4 · Biometric</div>
         <h4>Biometric Intake</h4>
-        <p>Age, resting heart rate, body weight, height, and sex are collected. BMI is computed automatically from weight and height.</p>
+        <p>Age, resting heart rate, body weight, height, and sex are collected. BMI is computed automatically. Hypertension diagnosis and medication status are also recorded.</p>
       </div>
     </div>
     <hr class="about-divider">
     <div class="about-section">
       <h3>Data Collection</h3>
-      <p>All responses are submitted directly to a secure research spreadsheet upon completion. No score is shown to participants — data is retained exclusively for researcher analysis. The site visit counter is tracked server-side and is consistent across all devices.</p>
+      <p>All responses are submitted directly to a secure research spreadsheet upon completion. No score is shown to participants. The site visit counter is tracked server-side and is consistent across all devices.</p>
     </div>
     <div class="about-note">
       This tool is intended for educational and research exploration only. It does not produce a clinical diagnosis. Do not use HROSE as a substitute for professional medical evaluation or clinical cardiovascular risk assessment.
@@ -388,11 +450,139 @@ html,body{width:100%;min-height:100vh;font-family:'DM Sans',sans-serif;backgroun
   <div class="footer"><div class="footer-inner">HROSE &nbsp;·&nbsp; Developed by <strong style="color:var(--text-muted)">Jack Cheng</strong> &nbsp;·&nbsp; For research purposes only</div></div>
 </div>
 
+<!-- MEDICATION MODAL -->
+<div class="modal-overlay" id="modal-med">
+  <div class="modal-box">
+    <h2 class="modal-title">One more question</h2>
+    <p class="modal-sub">Since you have been diagnosed with hypertension, please indicate your current medication status.</p>
+    <div class="modal-choices">
+      <button class="modal-choice" id="med-opt-yes" onclick="selectMed('yes')">Yes — I am currently taking antihypertensive medication</button>
+      <button class="modal-choice" id="med-opt-no" onclick="selectMed('no')">No — I am not currently taking any medication for it</button>
+      <button class="modal-choice" id="med-opt-stopped" onclick="selectMed('stopped')">I was previously medicated but have stopped</button>
+    </div>
+    <button class="modal-close" onclick="closeMedModal()">Skip this question</button>
+  </div>
+</div>
+
+<!-- CONSENT -->
+<div class="screen" id="scr-consent">
+  <nav class="nav">
+    <div class="nav-brand" onclick="goTo('scr-home')">HROSE<small>Hypertension Risk Online Sensory Evaluator</small></div>
+    <div class="nav-links"><a onclick="goTo('scr-home')">Home</a></div>
+  </nav>
+  <div class="consent-wrap">
+    <p class="section-eyebrow">Before you begin</p>
+    <h2 class="section-title">Informed Consent</h2>
+    <p class="section-desc">Please read the following carefully and confirm your agreement before proceeding.</p>
+    <div class="consent-box" id="consent-text">
+      <!-- ═══════════════════════════════════════════════════════
+           PASTE YOUR CONSENT FORM TEXT HERE
+           Replace the content below with your institution-approved
+           consent form. Plain text or basic HTML is supported.
+           ═══════════════════════════════════════════════════════ -->
+      <p><strong>Study Title:</strong> [Insert study title]</p><br>
+      <p><strong>Principal Investigator:</strong> Jack Cheng</p><br>
+      <p><strong>Purpose of the Study</strong><br>[Replace this with the study purpose.]</p><br>
+      <p><strong>Voluntary Participation</strong><br>[Replace this with a voluntary participation statement.]</p><br>
+      <p><strong>Data Use and Confidentiality</strong><br>[Replace this with your data handling description.]</p><br>
+      <p><strong>Risks and Benefits</strong><br>[Replace this with known risks and benefits.]</p><br>
+      <p><strong>Contact</strong><br>[Replace this with investigator and ethics board contact details.]</p>
+      <!-- ═══════════════════════════════════════════════════════
+           END OF CONSENT FORM PASTE AREA
+           ═══════════════════════════════════════════════════════ -->
+    </div>
+    <label class="consent-check-row" onclick="toggleConsentCheck()">
+      <input type="checkbox" id="consent-cb">
+      <span>I have read and understood the information above. I voluntarily agree to participate in this study and consent to my anonymised data being used for research purposes.</span>
+    </label>
+    <button class="btn-primary" id="consent-proceed-btn" style="width:100%;border-radius:var(--radius);opacity:.4;cursor:not-allowed" disabled onclick="proceedFromConsent()">
+      I Agree — Begin Assessment
+    </button>
+    <p style="font-size:11px;color:var(--text-dim);margin-top:14px;line-height:1.6;">If you do not wish to participate, close this window or return home.</p>
+  </div>
+  <div class="footer"><div class="footer-inner">HROSE &nbsp;·&nbsp; Developed by <strong style="color:var(--text-muted)">Jack Cheng</strong> &nbsp;·&nbsp; For research purposes only</div></div>
+</div>
+
+<!-- RESEARCH -->
+<div class="screen" id="scr-research">
+  <nav class="nav">
+    <div class="nav-brand" onclick="goTo('scr-home')">HROSE<small>Hypertension Risk Online Sensory Evaluator</small></div>
+    <div class="nav-links"><a onclick="goTo('scr-home')">Home</a><a onclick="goTo('scr-about')">About</a></div>
+  </nav>
+  <div class="research-wrap">
+    <p class="section-eyebrow">Study Documentation</p>
+    <h2 class="section-title">Research Information</h2>
+    <p class="section-desc">The document below contains detailed information about the research study underpinning this assessment.</p>
+    <div class="pdf-embed-area">
+      <!-- ═══════════════════════════════════════════════════════
+           TO EMBED YOUR PDF replace the div below with:
+           <iframe src="YOUR_PDF_URL" title="HROSE Research Document"></iframe>
+           For Google Drive: File > Share > Publish to web > Embed
+           ═══════════════════════════════════════════════════════ -->
+      <div class="pdf-placeholder">
+        <div style="font-size:40px;margin-bottom:12px">📄</div>
+        <p><strong>Research document not yet uploaded.</strong></p>
+        <p style="margin-top:6px">Replace this placeholder with your PDF iframe. See code comment above.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><div class="footer-inner">HROSE &nbsp;·&nbsp; Developed by <strong style="color:var(--text-muted)">Jack Cheng</strong> &nbsp;·&nbsp; For research purposes only</div></div>
+</div>
+
+<!-- WITHDRAWAL -->
+<div class="screen" id="scr-withdraw">
+  <nav class="nav">
+    <div class="nav-brand" onclick="goTo('scr-home')">HROSE<small>Hypertension Risk Online Sensory Evaluator</small></div>
+    <div class="nav-links"><a onclick="goTo('scr-home')">Home</a></div>
+  </nav>
+  <div class="withdraw-wrap">
+    <div class="withdraw-card">
+      <h2 class="withdraw-title">Withdraw Participation</h2>
+      <p class="withdraw-sub">You have the right to withdraw from this study and request deletion of your data at any time. Since assessments are submitted anonymously, please re-enter your biometric details so the research team can locate and remove your record.</p>
+      <div class="withdraw-field">
+        <label class="withdraw-label">Age</label>
+        <input class="withdraw-input" id="wd-age" type="number" min="18" max="100" placeholder="e.g. 45">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="withdraw-field">
+          <label class="withdraw-label">Weight (kg)</label>
+          <input class="withdraw-input" id="wd-weight" type="number" min="30" max="300" placeholder="e.g. 75">
+        </div>
+        <div class="withdraw-field">
+          <label class="withdraw-label">Height (cm)</label>
+          <input class="withdraw-input" id="wd-height" type="number" min="100" max="250" placeholder="e.g. 175">
+        </div>
+      </div>
+      <div class="withdraw-field" style="margin-top:12px">
+        <label class="withdraw-label">Sex assigned at birth</label>
+        <select class="withdraw-input" id="wd-sex" style="-webkit-appearance:none">
+          <option value="">Select…</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other / prefer not to say</option>
+        </select>
+      </div>
+      <div class="withdraw-field">
+        <label class="withdraw-label">Approximate date of participation</label>
+        <input class="withdraw-input" id="wd-date" type="date">
+      </div>
+      <div class="withdraw-field">
+        <label class="withdraw-label">Reason for withdrawal <span style="font-weight:300;text-transform:none;letter-spacing:0">(optional)</span></label>
+        <textarea class="withdraw-input" id="wd-reason" rows="3" placeholder="Optional — you are not required to give a reason" style="resize:vertical"></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%;border-radius:var(--radius-sm);margin-top:4px" onclick="submitWithdrawal()">Submit Withdrawal Request</button>
+      <div class="withdraw-status" id="wd-status"></div>
+      <p class="withdraw-note">The research team will use your biometric details to locate your record and remove it from the dataset. This process is manual and may take a few working days. For urgent requests, contact the principal investigator directly.</p>
+    </div>
+  </div>
+  <div class="footer"><div class="footer-inner">HROSE &nbsp;·&nbsp; Developed by <strong style="color:var(--text-muted)">Jack Cheng</strong> &nbsp;·&nbsp; For research purposes only</div></div>
+</div>
+
 <script>
-/* ═══════════════════════════════════════════════════════════
-   CONFIGURATION — paste your Google Apps Script URL here
-═══════════════════════════════════════════════════════════ */
-var SHEET_URL = "https://script.google.com/macros/s/AKfycbzwAbBbFrlTT6YeaOZTCqYuendvn1oge28fWtUauqVQX3-5jmetXoh_QZxZRBTrG2RodQ/exec";
+/* ══════════════════════════════════════════════════════
+   CONFIGURATION — paste your Apps Script URL here
+══════════════════════════════════════════════════════ */
+var SHEET_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec";
 
 /* VISIT COUNTER */
 function loadVisitCount() {
@@ -428,88 +618,124 @@ function switchTab(tab) {
   document.getElementById('login-err').textContent = '';
   document.getElementById('reg-err').textContent   = '';
 }
-
 function doLogin() {
   var u = document.getElementById('login-user').value.trim();
   var p = document.getElementById('login-pass').value;
   var users = getUsers();
-  if (!users[u])              { document.getElementById('login-err').textContent = 'Username not found.';   return; }
+  if (!users[u])             { document.getElementById('login-err').textContent = 'Username not found.';   return; }
   if (users[u].pw !== btoa(p)){ document.getElementById('login-err').textContent = 'Incorrect password.'; return; }
   currentUser = { username: u, name: users[u].name };
-  updateNavUser();
-  goTo('scr-home');
+  updateNavUser(); goTo('scr-home');
 }
-
 function doRegister() {
   var name = document.getElementById('reg-name').value.trim();
   var u    = document.getElementById('reg-user').value.trim();
   var p    = document.getElementById('reg-pass').value;
-  if (!name || !u || !p) { document.getElementById('reg-err').textContent = 'All fields are required.';         return; }
-  if (u.length < 3)       { document.getElementById('reg-err').textContent = 'Username: minimum 3 characters.'; return; }
-  if (p.length < 4)       { document.getElementById('reg-err').textContent = 'Password: minimum 4 characters.'; return; }
+  if (!name||!u||!p){ document.getElementById('reg-err').textContent='All fields are required.'; return; }
+  if (u.length<3)   { document.getElementById('reg-err').textContent='Username: minimum 3 characters.'; return; }
+  if (p.length<4)   { document.getElementById('reg-err').textContent='Password: minimum 4 characters.'; return; }
   var users = getUsers();
-  if (users[u])           { document.getElementById('reg-err').textContent = 'Username already taken.';         return; }
-  users[u] = { name: name, pw: btoa(p) };
+  if (users[u])     { document.getElementById('reg-err').textContent='Username already taken.'; return; }
+  users[u] = { name:name, pw:btoa(p) };
   saveUsers(users);
-  currentUser = { username: u, name: name };
-  updateNavUser();
-  goTo('scr-home');
+  currentUser = { username:u, name:name };
+  updateNavUser(); goTo('scr-home');
 }
-
-function doLogout() { currentUser = null; updateNavUser(); goTo('scr-home'); }
+function doLogout() { currentUser=null; updateNavUser(); goTo('scr-home'); }
 
 function updateNavUser() {
   var el = document.getElementById('nav-home');
+  var links =
+    '<a onclick="goTo(\'scr-about\')">About</a>' +
+    '<a onclick="goTo(\'scr-research\')">Research</a>' +
+    '<a onclick="goTo(\'scr-withdraw\')">Withdraw</a>';
   if (currentUser) {
-    var ini = currentUser.name.split(' ').map(function(w){ return w[0]; }).slice(0,2).join('').toUpperCase();
-    el.innerHTML =
-      '<span class="nav-visit" id="visit-badge">— visits</span>' +
-      '<a onclick="goTo(\'scr-about\')">About</a>' +
-      '<div class="nav-user"><div class="avatar">' + ini + '</div>' + currentUser.name + '</div>' +
+    var ini = currentUser.name.split(' ').map(function(w){return w[0];}).slice(0,2).join('').toUpperCase();
+    el.innerHTML = '<span class="nav-visit" id="visit-badge">— visits</span>' + links +
+      '<div class="nav-user"><div class="avatar">'+ini+'</div>'+currentUser.name+'</div>' +
       '<a onclick="doLogout()">Sign Out</a>';
   } else {
-    el.innerHTML =
-      '<span class="nav-visit" id="visit-badge">— visits</span>' +
-      '<a onclick="goTo(\'scr-about\')">About</a>' +
+    el.innerHTML = '<span class="nav-visit" id="visit-badge">— visits</span>' + links +
       '<a onclick="goTo(\'scr-auth\')">Sign In</a>';
   }
   loadVisitCount();
 }
-
 function userLabel() { return currentUser ? currentUser.name : 'Guest'; }
-
 function setNavForScreen(id) {
   var el = document.getElementById(id);
   if (!el) return;
   if (currentUser) {
-    var ini = currentUser.name.split(' ').map(function(w){ return w[0]; }).slice(0,2).join('').toUpperCase();
-    el.innerHTML = '<div class="nav-user"><div class="avatar">' + ini + '</div>' + currentUser.name + '</div>';
-  } else {
-    el.innerHTML = '';
-  }
+    var ini = currentUser.name.split(' ').map(function(w){return w[0];}).slice(0,2).join('').toUpperCase();
+    el.innerHTML = '<div class="nav-user"><div class="avatar">'+ini+'</div>'+currentUser.name+'</div>';
+  } else { el.innerHTML=''; }
 }
 
 /* NAVIGATION */
 function goTo(id) {
-  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});
   document.getElementById(id).classList.add('active');
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 }
-function confirmExit() { if (confirm('Exit assessment? Progress will be lost.')) goTo('scr-home'); }
-function handleStartClick() { startAssessment(); }
+function confirmExit() { if(confirm('Exit assessment? Progress will be lost.')) goTo('scr-home'); }
+
+/* CONSENT */
+function handleStartClick() { goTo('scr-consent'); resetConsent(); }
+function resetConsent() {
+  document.getElementById('consent-cb').checked = false;
+  var btn = document.getElementById('consent-proceed-btn');
+  btn.disabled = true; btn.style.opacity = '.4'; btn.style.cursor = 'not-allowed';
+}
+function toggleConsentCheck() {
+  setTimeout(function() {
+    var checked = document.getElementById('consent-cb').checked;
+    var btn = document.getElementById('consent-proceed-btn');
+    btn.disabled = !checked;
+    btn.style.opacity = checked ? '1' : '.4';
+    btn.style.cursor = checked ? 'pointer' : 'not-allowed';
+  }, 10);
+}
+function proceedFromConsent() {
+  if (!document.getElementById('consent-cb').checked) return;
+  startAssessment();
+}
+
+/* MEDICATION MODAL */
+var medAnswer = '';
+function selectHtn(val) {
+  ['yes','no','unknown'].forEach(function(v) {
+    var el = document.getElementById('htn-opt-'+v);
+    if (el) el.classList.remove('selected');
+  });
+  document.getElementById('htn-opt-'+val).classList.add('selected');
+  document.querySelector('input[name="dx-htn"][value="'+val+'"]').checked = true;
+  if (val === 'yes') {
+    medAnswer = '';
+    ['yes','no','stopped'].forEach(function(v){ document.getElementById('med-opt-'+v).classList.remove('selected'); });
+    document.getElementById('modal-med').classList.add('active');
+  } else {
+    medAnswer = 'n/a';
+  }
+}
+function selectMed(val) {
+  medAnswer = val;
+  ['yes','no','stopped'].forEach(function(v){ document.getElementById('med-opt-'+v).classList.remove('selected'); });
+  document.getElementById('med-opt-'+val).classList.add('selected');
+  setTimeout(closeMedModal, 380);
+}
+function closeMedModal() {
+  document.getElementById('modal-med').classList.remove('active');
+  if (!medAnswer) medAnswer = 'skipped';
+}
 
 /* STATE */
 var S = {};
-
 function startAssessment() {
   S = {
-    reactionTimes: [], reactTrial: 0, reactPhase: 'idle', reactTimer: null, reactStart: 0,
-    decScores: [], decRound: 0, decStart: 0, decCurrentNum: 0,
-    memLevel: 4, memCorrect: 0, memTotal: 0, memMaxLevel: 4,
-    memPhase: 'ready', memCurrentSeq: [],
+    reactionTimes:[], reactTrial:0, reactPhase:'idle', reactTimer:null, reactStart:0,
+    decScores:[], decRound:0, decStart:0, decCurrentNum:0,
+    memLevel:4, memCorrect:0, memTotal:0, memMaxLevel:4, memPhase:'ready', memCurrentSeq:[],
   };
-  goTo('scr-reaction');
-  setNavForScreen('nav-reaction');
+  goTo('scr-reaction'); setNavForScreen('nav-reaction');
   document.getElementById('react-step-user').textContent = userLabel();
   initReaction();
 }
@@ -518,276 +744,232 @@ function startAssessment() {
 function initReaction() {
   var dots = document.getElementById('trial-dots');
   dots.innerHTML = '';
-  for (var i = 0; i < 5; i++) {
-    var d = document.createElement('div');
-    d.className = 'trial-dot' + (i === 0 ? ' active' : '');
-    d.id = 'rdot-' + i;
+  for (var i=0;i<5;i++) {
+    var d=document.createElement('div');
+    d.className='trial-dot'+(i===0?' active':''); d.id='rdot-'+i;
     dots.appendChild(d);
   }
-  var box = document.getElementById('react-box');
-  box.className = 'react-area idle';
-  box.onclick = handleReactClick;
-  document.getElementById('react-msg').textContent = 'Click to begin';
-  document.getElementById('react-sub').textContent = '';
-  document.getElementById('trial-list').innerHTML = '';
-  S.reactPhase = 'idle';
-  S.reactTrial = 0;
+  var box=document.getElementById('react-box');
+  box.className='react-area idle'; box.onclick=handleReactClick;
+  document.getElementById('react-msg').textContent='Click to begin';
+  document.getElementById('react-sub').textContent='';
+  document.getElementById('trial-list').innerHTML='';
+  S.reactPhase='idle'; S.reactTrial=0;
 }
-
 function handleReactClick() {
-  var box = document.getElementById('react-box');
-  var msg = document.getElementById('react-msg');
-  var sub = document.getElementById('react-sub');
-  if (S.reactPhase === 'idle') {
-    S.reactPhase = 'wait';
-    box.className = 'react-area wait';
-    msg.textContent = 'Wait…';
-    sub.textContent = 'Do not click yet';
-    S.reactTimer = setTimeout(function() {
-      if (S.reactPhase !== 'wait') return;
-      S.reactPhase = 'go';
-      box.className = 'react-area go';
-      msg.textContent = 'Click!';
-      sub.textContent = '';
-      S.reactStart = Date.now();
-    }, 1500 + Math.random() * 2500);
-  } else if (S.reactPhase === 'wait') {
-    clearTimeout(S.reactTimer);
-    S.reactPhase = 'idle';
-    box.className = 'react-area early';
-    msg.textContent = 'Too early!';
-    sub.textContent = 'Click to try again';
-    setTimeout(function() {
-      if (S.reactPhase === 'idle') { box.className = 'react-area idle'; msg.textContent = 'Click to try again'; }
-    }, 900);
-  } else if (S.reactPhase === 'go') {
-    var rt = Date.now() - S.reactStart;
-    S.reactionTimes.push(rt);
-    S.reactPhase = 'idle';
-    document.getElementById('rdot-' + S.reactTrial).className = 'trial-dot done';
-    addTrialItem(S.reactTrial, rt);
-    S.reactTrial++;
-    if (S.reactTrial >= 5) {
-      msg.textContent = 'Complete!';
-      sub.textContent = 'Proceeding…';
-      box.className = 'react-area idle';
-      box.onclick = null;
-      setTimeout(startDecision, 1000);
+  var box=document.getElementById('react-box');
+  var msg=document.getElementById('react-msg');
+  var sub=document.getElementById('react-sub');
+  if (S.reactPhase==='idle') {
+    S.reactPhase='wait'; box.className='react-area wait';
+    msg.textContent='Wait…'; sub.textContent='Do not click yet';
+    S.reactTimer=setTimeout(function(){
+      if(S.reactPhase!=='wait')return;
+      S.reactPhase='go'; box.className='react-area go';
+      msg.textContent='Click!'; sub.textContent=''; S.reactStart=Date.now();
+    },1500+Math.random()*2500);
+  } else if (S.reactPhase==='wait') {
+    clearTimeout(S.reactTimer); S.reactPhase='idle';
+    box.className='react-area early'; msg.textContent='Too early!'; sub.textContent='Click to try again';
+    setTimeout(function(){if(S.reactPhase==='idle'){box.className='react-area idle';msg.textContent='Click to try again';}},900);
+  } else if (S.reactPhase==='go') {
+    var rt=Date.now()-S.reactStart;
+    S.reactionTimes.push(rt); S.reactPhase='idle';
+    document.getElementById('rdot-'+S.reactTrial).className='trial-dot done';
+    addTrialItem(S.reactTrial,rt); S.reactTrial++;
+    if(S.reactTrial>=5){
+      msg.textContent='Complete!'; sub.textContent='Proceeding…';
+      box.className='react-area idle'; box.onclick=null;
+      setTimeout(startDecision,1000);
     } else {
-      box.className = 'react-area idle';
-      msg.textContent = 'Click for trial ' + (S.reactTrial + 1);
-      sub.textContent = 'Trial ' + (S.reactTrial + 1) + ' of 5';
-      document.getElementById('rdot-' + S.reactTrial).className = 'trial-dot active';
+      box.className='react-area idle';
+      msg.textContent='Click for trial '+(S.reactTrial+1);
+      sub.textContent='Trial '+(S.reactTrial+1)+' of 5';
+      document.getElementById('rdot-'+S.reactTrial).className='trial-dot active';
     }
   }
 }
-
-function addTrialItem(i, rt) {
-  var q = rt < 200 ? 'Excellent' : rt < 300 ? 'Good' : rt < 450 ? 'Average' : 'Slow';
-  var div = document.createElement('div');
-  div.className = 'trial-item';
-  div.innerHTML = '<span style="color:var(--text-muted)">Trial ' + (i+1) + '</span>'
-                + '<span class="trial-ms">' + rt + ' ms</span>'
-                + '<span class="trial-qual">' + q + '</span>';
+function addTrialItem(i,rt) {
+  var q=rt<200?'Excellent':rt<300?'Good':rt<450?'Average':'Slow';
+  var div=document.createElement('div'); div.className='trial-item';
+  div.innerHTML='<span style="color:var(--text-muted)">Trial '+(i+1)+'</span><span class="trial-ms">'+rt+' ms</span><span class="trial-qual">'+q+'</span>';
   document.getElementById('trial-list').appendChild(div);
 }
 
 /* DECISION */
 function startDecision() {
-  S.decRound = 0; S.decScores = [];
-  goTo('scr-decision');
-  setNavForScreen('nav-decision');
-  document.getElementById('dec-step-user').textContent = userLabel();
-  var de = document.getElementById('dec-dots');
-  de.innerHTML = '';
-  for (var i = 0; i < 10; i++) {
-    var d = document.createElement('div');
-    d.className = 'dec-dot'; d.id = 'ddot-' + i;
-    de.appendChild(d);
-  }
+  S.decRound=0; S.decScores=[];
+  goTo('scr-decision'); setNavForScreen('nav-decision');
+  document.getElementById('dec-step-user').textContent=userLabel();
+  var de=document.getElementById('dec-dots'); de.innerHTML='';
+  for(var i=0;i<10;i++){var d=document.createElement('div');d.className='dec-dot';d.id='ddot-'+i;de.appendChild(d);}
   nextDecision();
 }
-
 function nextDecision() {
-  if (S.decRound >= 10) { setTimeout(startMemory, 400); return; }
-  var n = Math.floor(Math.random() * 99) + 1;
-  S.decCurrentNum = n; S.decStart = Date.now();
-  document.getElementById('dec-number').textContent = n;
-  document.getElementById('dec-counter').textContent = 'Round ' + (S.decRound + 1) + ' of 10';
-  var d = document.getElementById('ddot-' + S.decRound);
-  if (d) d.className = 'dec-dot active-dot';
-  document.getElementById('btn-odd').className  = 'choice-btn';
-  document.getElementById('btn-even').className = 'choice-btn';
-  document.getElementById('btn-odd').disabled   = false;
-  document.getElementById('btn-even').disabled  = false;
+  if(S.decRound>=10){setTimeout(startMemory,400);return;}
+  var n=Math.floor(Math.random()*99)+1;
+  S.decCurrentNum=n; S.decStart=Date.now();
+  document.getElementById('dec-number').textContent=n;
+  document.getElementById('dec-counter').textContent='Round '+(S.decRound+1)+' of 10';
+  var d=document.getElementById('ddot-'+S.decRound);
+  if(d)d.className='dec-dot active-dot';
+  document.getElementById('btn-odd').className='choice-btn';
+  document.getElementById('btn-even').className='choice-btn';
+  document.getElementById('btn-odd').disabled=false;
+  document.getElementById('btn-even').disabled=false;
 }
-
 function decisionAnswer(ans) {
-  var rt = Date.now() - S.decStart;
-  var correct = (ans === 'odd' && S.decCurrentNum % 2 !== 0) || (ans === 'even' && S.decCurrentNum % 2 === 0);
-  document.getElementById('btn-' + ans).className = 'choice-btn ' + (correct ? 'correct' : 'wrong');
-  document.getElementById('btn-odd').disabled  = true;
-  document.getElementById('btn-even').disabled = true;
-  var d = document.getElementById('ddot-' + S.decRound);
-  if (d) d.className = 'dec-dot ' + (correct ? 'correct-dot' : 'wrong-dot');
-  S.decScores.push({ rt: rt, correct: correct });
-  S.decRound++;
-  setTimeout(nextDecision, 500);
+  var rt=Date.now()-S.decStart;
+  var correct=(ans==='odd'&&S.decCurrentNum%2!==0)||(ans==='even'&&S.decCurrentNum%2===0);
+  document.getElementById('btn-'+ans).className='choice-btn '+(correct?'correct':'wrong');
+  document.getElementById('btn-odd').disabled=true; document.getElementById('btn-even').disabled=true;
+  var d=document.getElementById('ddot-'+S.decRound);
+  if(d)d.className='dec-dot '+(correct?'correct-dot':'wrong-dot');
+  S.decScores.push({rt:rt,correct:correct}); S.decRound++;
+  setTimeout(nextDecision,500);
 }
 
-/* MEMORY — adaptive digit span
-   - Minimum 3 rounds always played
-   - Correct: span +1 (max 8)
-   - Wrong: end the test if memTotal >= 3, otherwise continue
-*/
+/* MEMORY */
 function startMemory() {
-  S.memLevel = 4; S.memCorrect = 0; S.memTotal = 0;
-  S.memMaxLevel = 4; S.memPhase = 'ready';
-  goTo('scr-memory');
-  setNavForScreen('nav-memory');
-  document.getElementById('mem-step-user').textContent = userLabel();
-  document.getElementById('mem-display').textContent = 'Ready?';
-  document.getElementById('mem-display').className = 'mem-display';
-  document.getElementById('mem-prompt').textContent = 'Press Show Sequence to begin. Sequence starts at 4 digits.';
-  document.getElementById('mem-input').value = '';
-  document.getElementById('mem-input').disabled = true;
-  document.getElementById('mem-score').innerHTML = '';
-  resetMemBtn('Show Sequence', memoryAction);
+  S.memLevel=4; S.memCorrect=0; S.memTotal=0; S.memMaxLevel=4; S.memPhase='ready';
+  goTo('scr-memory'); setNavForScreen('nav-memory');
+  document.getElementById('mem-step-user').textContent=userLabel();
+  document.getElementById('mem-display').textContent='Ready?';
+  document.getElementById('mem-display').className='mem-display';
+  document.getElementById('mem-prompt').textContent='Press Show Sequence to begin. Sequence starts at 4 digits.';
+  document.getElementById('mem-input').value=''; document.getElementById('mem-input').disabled=true;
+  document.getElementById('mem-score').innerHTML='';
+  resetMemBtn('Show Sequence',memoryAction);
 }
-
-function resetMemBtn(label, fn) {
-  var btn = document.getElementById('mem-btn');
-  btn.textContent = label;
-  btn.disabled = !fn;
-  btn.onclick = fn;
+function resetMemBtn(label,fn) {
+  var btn=document.getElementById('mem-btn');
+  btn.textContent=label; btn.disabled=!fn; btn.onclick=fn;
 }
-
 function addMemPip(pass) {
-  var pip = document.createElement('div');
-  pip.className = 'mem-pip ' + (pass ? 'pass' : 'fail');
+  var pip=document.createElement('div');
+  pip.className='mem-pip '+(pass?'pass':'fail');
   document.getElementById('mem-score').appendChild(pip);
 }
-
 function memoryAction() {
-  if (S.memPhase === 'ready' || S.memPhase === 'next') {
-    S.memCurrentSeq = Array.from({ length: S.memLevel }, function() { return Math.floor(Math.random() * 10); });
-    document.getElementById('mem-display').textContent = S.memCurrentSeq.join(' ');
-    document.getElementById('mem-display').className = 'mem-display';
-    document.getElementById('mem-prompt').textContent = 'Memorise this sequence…';
-    document.getElementById('mem-input').disabled = true;
-    resetMemBtn('Memorising…', null);
-    S.memPhase = 'showing';
-    var dur = S.memLevel <= 4 ? 2500 : S.memLevel <= 6 ? 3200 : 4000;
-    setTimeout(function() {
-      document.getElementById('mem-display').textContent = '• '.repeat(S.memLevel).trim();
-      document.getElementById('mem-display').className = 'mem-display faded';
-      document.getElementById('mem-prompt').textContent = 'Enter the sequence:';
-      document.getElementById('mem-input').disabled = false;
-      document.getElementById('mem-input').value = '';
+  if(S.memPhase==='ready'||S.memPhase==='next'){
+    S.memCurrentSeq=Array.from({length:S.memLevel},function(){return Math.floor(Math.random()*10);});
+    document.getElementById('mem-display').textContent=S.memCurrentSeq.join(' ');
+    document.getElementById('mem-display').className='mem-display';
+    document.getElementById('mem-prompt').textContent='Memorise this sequence…';
+    document.getElementById('mem-input').disabled=true;
+    resetMemBtn('Memorising…',null); S.memPhase='showing';
+    var dur=S.memLevel<=4?2500:S.memLevel<=6?3200:4000;
+    setTimeout(function(){
+      document.getElementById('mem-display').textContent='• '.repeat(S.memLevel).trim();
+      document.getElementById('mem-display').className='mem-display faded';
+      document.getElementById('mem-prompt').textContent='Enter the sequence:';
+      document.getElementById('mem-input').disabled=false;
+      document.getElementById('mem-input').value='';
       document.getElementById('mem-input').focus();
-      resetMemBtn('Submit Answer', memoryAction);
-      S.memPhase = 'input';
-    }, dur);
-
-  } else if (S.memPhase === 'input') {
-    var raw = document.getElementById('mem-input').value.replace(/\s+/g, '').split('').map(Number);
-    var correct = JSON.stringify(raw) === JSON.stringify(S.memCurrentSeq);
-    S.memTotal++;
-    document.getElementById('mem-input').disabled = true;
-
-    var endTest = !correct && S.memTotal >= 3;
-
-    if (correct) {
-      S.memCorrect++;
-      S.memLevel = Math.min(S.memLevel + 1, 8);
-      S.memMaxLevel = Math.max(S.memMaxLevel, S.memLevel);
-      document.getElementById('mem-prompt').textContent = '✓ Correct! Span increasing to ' + S.memLevel + ' digits.';
+      resetMemBtn('Submit Answer',memoryAction); S.memPhase='input';
+    },dur);
+  } else if(S.memPhase==='input'){
+    var raw=document.getElementById('mem-input').value.replace(/\s+/g,'').split('').map(Number);
+    var correct=JSON.stringify(raw)===JSON.stringify(S.memCurrentSeq);
+    S.memTotal++; document.getElementById('mem-input').disabled=true;
+    var endTest=!correct&&S.memTotal>=3;
+    if(correct){
+      S.memCorrect++; S.memLevel=Math.min(S.memLevel+1,8);
+      S.memMaxLevel=Math.max(S.memMaxLevel,S.memLevel);
+      document.getElementById('mem-prompt').textContent='✓ Correct! Span increasing to '+S.memLevel+' digits.';
       addMemPip(true);
     } else {
-      document.getElementById('mem-prompt').textContent = '✗ Incorrect. Answer was: ' + S.memCurrentSeq.join(' ')
-        + (endTest ? '  —  Test complete.' : '  Keep going.');
+      document.getElementById('mem-prompt').textContent='✗ Incorrect. Answer was: '+S.memCurrentSeq.join(' ')+(endTest?'  —  Test complete.':'  Keep going.');
       addMemPip(false);
     }
-
-    S.memPhase = 'next';
-
-    if (endTest) {
-      resetMemBtn('Continue to biometrics →', function() {
-        goTo('scr-bio');
-        setNavForScreen('nav-bio');
-        document.getElementById('bio-step-user').textContent = userLabel();
+    S.memPhase='next';
+    if(endTest){
+      resetMemBtn('Continue to biometrics →',function(){
+        goTo('scr-bio'); setNavForScreen('nav-bio');
+        document.getElementById('bio-step-user').textContent=userLabel();
       });
-    } else {
-      resetMemBtn('Next sequence', memoryAction);
-    }
+    } else { resetMemBtn('Next sequence',memoryAction); }
   }
 }
 
-/* SUBMIT via JSONP */
+/* SUBMIT */
 function submitAssessment() {
-  var age = parseInt(document.getElementById('bio-age').value);
-  var hr  = parseInt(document.getElementById('bio-hr').value);
-  var wt  = parseFloat(document.getElementById('bio-weight').value);
-  var ht  = parseFloat(document.getElementById('bio-height').value);
-  var sex = document.getElementById('bio-sex').value;
-
-  if ([age, hr, wt, ht].some(isNaN) || !sex) {
-    alert('Please complete all fields before submitting.');
-    return;
-  }
-
-  var bmi      = parseFloat((wt / Math.pow(ht / 100, 2)).toFixed(1));
-  var times    = S.reactionTimes;
-  var meanRT   = Math.round(times.reduce(function(a,b){ return a+b; },0) / times.length);
-  var variance = times.reduce(function(a,b){ return a + Math.pow(b-meanRT,2); },0) / times.length;
-  var sdRT     = Math.round(Math.sqrt(variance));
-  var decCorrect = S.decScores.filter(function(d){ return d.correct; }).length;
-  var decMeanRT  = Math.round(S.decScores.reduce(function(a,b){ return a+b.rt; },0) / S.decScores.length);
-  var memAcc     = Math.round((S.memCorrect / Math.max(S.memTotal,1)) * 100);
-
-  var params = {
-    action: 'submit',
-    username: currentUser ? currentUser.username : 'guest',
-    age: age, hr: hr, weight: wt, height: ht, bmi: bmi, sex: sex,
-    rt1: times[0]||'', rt2: times[1]||'', rt3: times[2]||'', rt4: times[3]||'', rt5: times[4]||'',
-    meanRT: meanRT, sdRT: sdRT,
-    decCorrect: decCorrect, decMeanRT: decMeanRT,
-    memAcc: memAcc, memMaxLevel: S.memMaxLevel, memTotal: S.memTotal, memCorrect: S.memCorrect
+  var age=parseInt(document.getElementById('bio-age').value);
+  var hr=parseInt(document.getElementById('bio-hr').value);
+  var wt=parseFloat(document.getElementById('bio-weight').value);
+  var ht=parseFloat(document.getElementById('bio-height').value);
+  var sex=document.getElementById('bio-sex').value;
+  var htnChecked=document.querySelector('input[name="dx-htn"]:checked');
+  var htnDx=htnChecked?htnChecked.value:'';
+  if([age,hr,wt,ht].some(isNaN)||!sex||!htnDx){alert('Please complete all fields before submitting.');return;}
+  var bmi=parseFloat((wt/Math.pow(ht/100,2)).toFixed(1));
+  var times=S.reactionTimes;
+  var meanRT=Math.round(times.reduce(function(a,b){return a+b;},0)/times.length);
+  var variance=times.reduce(function(a,b){return a+Math.pow(b-meanRT,2);},0)/times.length;
+  var sdRT=Math.round(Math.sqrt(variance));
+  var decCorrect=S.decScores.filter(function(d){return d.correct;}).length;
+  var decMeanRT=Math.round(S.decScores.reduce(function(a,b){return a+b.rt;},0)/S.decScores.length);
+  var memAcc=Math.round((S.memCorrect/Math.max(S.memTotal,1))*100);
+  var params={
+    action:'submit', username:currentUser?currentUser.username:'guest',
+    age:age, hr:hr, weight:wt, height:ht, bmi:bmi, sex:sex,
+    htnDiagnosis:htnDx, htnMedication:htnDx==='yes'?(medAnswer||'skipped'):'n/a',
+    rt1:times[0]||'', rt2:times[1]||'', rt3:times[2]||'', rt4:times[3]||'', rt5:times[4]||'',
+    meanRT:meanRT, sdRT:sdRT, decCorrect:decCorrect, decMeanRT:decMeanRT,
+    memAcc:memAcc, memMaxLevel:S.memMaxLevel, memTotal:S.memTotal, memCorrect:S.memCorrect
   };
-
-  goTo('scr-thankyou');
-  setStatus('sending', 'Submitting your responses…', true);
-
-  var cb = 'hroseSubmitCB_' + Date.now();
-  window[cb] = function(data) {
-    if (data && data.result === 'success') {
-      setStatus('ok', '✓ Responses recorded. Thank you!', false);
-    } else {
-      setStatus('err', 'Submission error — please inform a member of staff.', false);
-    }
-    delete window[cb];
-    var s = document.getElementById('jsonp-submit');
-    if (s) s.parentNode.removeChild(s);
+  goTo('scr-thankyou'); setStatus('sending','Submitting your responses…',true);
+  var cb='hroseSubmitCB_'+Date.now();
+  window[cb]=function(data){
+    if(data&&data.result==='success'){setStatus('ok','✓ Responses recorded. Thank you!',false);}
+    else{setStatus('err','Submission error — please inform a member of staff.',false);}
+    delete window[cb]; var s=document.getElementById('jsonp-submit'); if(s)s.parentNode.removeChild(s);
   };
-
-  var qs = Object.keys(params).map(function(k){
-    return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
-  }).join('&');
-
-  var script = document.createElement('script');
-  script.id = 'jsonp-submit';
-  script.src = SHEET_URL + '?' + qs + '&callback=' + cb;
-  script.onerror = function() {
-    setStatus('err', 'Submission failed — please inform a member of staff.', false);
-    delete window[cb];
-  };
+  var qs=Object.keys(params).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(params[k]);}).join('&');
+  var script=document.createElement('script'); script.id='jsonp-submit';
+  script.src=SHEET_URL+'?'+qs+'&callback='+cb;
+  script.onerror=function(){setStatus('err','Submission failed — please inform a member of staff.',false);delete window[cb];};
   document.body.appendChild(script);
 }
+function setStatus(type,msg,spinner){
+  document.getElementById('ty-status').className='ty-status '+type;
+  document.getElementById('ty-spinner').style.display=spinner?'block':'none';
+  document.getElementById('ty-status-text').textContent=msg;
+}
 
-function setStatus(type, msg, spinner) {
-  document.getElementById('ty-status').className = 'ty-status ' + type;
-  document.getElementById('ty-spinner').style.display = spinner ? 'block' : 'none';
-  document.getElementById('ty-status-text').textContent = msg;
+/* WITHDRAWAL */
+function submitWithdrawal() {
+  var age    = parseInt(document.getElementById('wd-age').value);
+  var weight = parseFloat(document.getElementById('wd-weight').value);
+  var height = parseFloat(document.getElementById('wd-height').value);
+  var sex    = document.getElementById('wd-sex').value;
+  var date   = document.getElementById('wd-date').value;
+  var reason = document.getElementById('wd-reason').value.trim();
+  var status = document.getElementById('wd-status');
+  if(isNaN(age)||isNaN(weight)||isNaN(height)||!sex||!date){
+    status.className='withdraw-status err'; status.textContent='Please complete all required fields.'; return;
+  }
+  status.className='withdraw-status'; status.textContent='Submitting…';
+  var bmi=parseFloat((weight/Math.pow(height/100,2)).toFixed(1));
+  var params={action:'withdraw',age:age,weight:weight,height:height,bmi:bmi,sex:sex,date:date,reason:reason||'Not provided'};
+  var cb='hroseWdCB_'+Date.now();
+  window[cb]=function(data){
+    if(data&&data.result==='success'){
+      status.className='withdraw-status ok';
+      status.textContent='✓ Request submitted. The research team will locate and remove your data.';
+      document.getElementById('wd-age').value=''; document.getElementById('wd-weight').value='';
+      document.getElementById('wd-height').value=''; document.getElementById('wd-sex').value='';
+      document.getElementById('wd-date').value=''; document.getElementById('wd-reason').value='';
+    } else {
+      status.className='withdraw-status err'; status.textContent='Submission error. Please contact the research team directly.';
+    }
+    delete window[cb]; var s=document.getElementById('jsonp-wd'); if(s)s.parentNode.removeChild(s);
+  };
+  var qs=Object.keys(params).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(params[k]);}).join('&');
+  var script=document.createElement('script'); script.id='jsonp-wd';
+  script.src=SHEET_URL+'?'+qs+'&callback='+cb;
+  script.onerror=function(){status.className='withdraw-status err';status.textContent='Submission failed. Please contact the research team directly.';delete window[cb];};
+  document.body.appendChild(script);
 }
 
 /* INIT */
